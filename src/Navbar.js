@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 export default function Navbar() {
   return (
@@ -32,13 +32,13 @@ export default function Navbar() {
     
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <Link className="nav-link" to="#">Home</Link>
+          <Link className="nav-link" to="/animelist">Home</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="#">Top Merch</Link>
+          <Link className="nav-link" to="/topmerch">Top Merch</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="#">Contact Us</Link>
+          <Link className="nav-link" to="/contact">Contact Us</Link>
         </li>
       </ul>
       
@@ -48,9 +48,9 @@ export default function Navbar() {
     
     <div className="d-flex align-items-center">
      
-      <Link className="text-reset me-3" to="#">
+      <NavLink className="text-reset me-3" to="/cart">
         <i className="fas fa-shopping-cart"></i>
-      </Link>
+      </NavLink>
 
       
       <div className="dropdown">
@@ -103,13 +103,13 @@ export default function Navbar() {
           aria-labelledby="navbarDropdownMenuAvatar"
         >
           <li>
-            <a className="dropdown-item" to="#">My profile</a>
+            <Link className="dropdown-item" to="#">My profile</Link>
           </li>
           <li>
-            <a className="dropdown-item" to="#">Settings</a>
+            <Link className="dropdown-item" to="#">Settings</Link>
           </li>
           <li>
-            <a className="dropdown-item" to="#">Logout</a>
+            <Link className="dropdown-item" to="#">Logout</Link>
           </li>
         </ul>
       </div>

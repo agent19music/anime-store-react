@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 export default function Anime({animes}) {
   return (
     <div className='mt-5'>
@@ -12,7 +12,7 @@ export default function Anime({animes}) {
                 <h5 className="card-title">{anime.title}</h5>
                 <p className="card-text">{anime.rating}</p>
                 <div className='buttons'>
-                <a href="#!" className="btn btn-success" >Shop</a>
+                <Link to='/animemerch' className="btn btn-success" >Shop</Link>
                 </div>
 
               </div>
