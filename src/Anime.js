@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Anime({animes}) {
   return (
-    <div>
+    <div className='mt-5'>
          <div className="row">
         {animes.map((anime, index) => (
           <div key={index} className="col-md-3 bg-dark text-white" id="picha">

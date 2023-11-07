@@ -11,7 +11,7 @@ function App() {
     .then((res)=> setAnimes(res))
 },[])
   return (
-    <div className="App">
+    <div className="App bg-dark text-white">
       <Navbar/>
      <Animelist animes ={animes}/>
      
@@ -20,3 +20,4 @@ function App() {
 }
 
 export default App;
+ 

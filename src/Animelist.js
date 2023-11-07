@@ -3,7 +3,7 @@ import Anime from './Anime'
 
 export default function Animecollection({animes}) {
   return (
-    <div>
+    <div className='container'>
       <Anime key={animes.id} animes ={animes}/>
     </div>
   )
