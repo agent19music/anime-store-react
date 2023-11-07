@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import Animelist from './Animelist.js'
+import Navbar from './Navbar.js';
 
 function App() {
   const [animes, setAnimes] = useState([])
@@ -11,6 +12,7 @@ function App() {
 },[])
   return (
     <div className="App">
+      <Navbar/>
      <Animelist animes ={animes}/>
      
     </div>
