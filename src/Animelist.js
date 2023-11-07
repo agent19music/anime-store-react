@@ -1,7 +1,10 @@
 import React from 'react'
+import Anime from './Anime'
 
-export default function Animecollection() {
+export default function Animecollection({animes}) {
   return (
-    <div>Animecollection</div>
+    <div>
+      <Anime key={animes.id} animes ={animes}/>
+    </div>
   )
 }
