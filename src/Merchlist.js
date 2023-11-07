@@ -1,26 +1,24 @@
-// Merchlist.js
 import React, { useState, useEffect } from 'react';
-import Merch from './Merch';
+import AnimeMerchandise from './AnimeMerchandise';
 import { useParams } from 'react-router-dom';
 
 export default function Merchlist() {
   const { id } = useParams();
-  const [merch, setMerch] = useState([]);
+  const [anime, setAnime] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8555/animes/${id}/merchandise`) // Assuming merchandise data is a subpath under the anime ID
+    fetch(`http://localhost:8555/animes/${id}`)
       .then((res) => res.json())
-      .then((res) => setMerch(res));
+      .then((data) => setAnime(data))
+      .catch((error) => console.error(error));
   }, [id]);
 
   return (
     <div>
-      {merch.length > 0 ? (
-        merch.map((item, index) => (
-          <Merch key={index} merchandise={item} />
-        ))
+      {anime ? (
+        <AnimeMerchandise anime={anime} />
       ) : (
-        <p>Loading merchandise data...</p>
+        <p>Loading anime merchandise data...</p>
       )}
     </div>
   );

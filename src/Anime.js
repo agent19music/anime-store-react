@@ -12,7 +12,7 @@ export default function Anime({animes}) {
                 <h5 className="card-title">{anime.title}</h5>
                 <p className="card-text">{anime.rating}</p>
                 <div className='buttons'>
-                <Link to='/animemerch' className="btn btn-success" >Shop</Link>
+                <Link to={`/animemerch/${anime.id}`} className="btn btn-success" >Shop</Link>
                 </div>
 
               </div>

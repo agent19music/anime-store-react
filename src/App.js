@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './Cart.js';
 import Contact from './Contact.js';
 import Merch from './Merch.js';
+import AnimeMerchandise from './AnimeMerchandise.js';
 
 
 
@@ -27,10 +28,7 @@ function App() {
           <Route path="/animelist" element={<Animelist animes={animes}/>} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/animemerch" element={<Merchlist />} />
-          <Route path="/animemerch/:id" element={<Merch />} />
-
-
+          <Route path="/animemerch/:id" element={<Merchlist />} />
         </Routes>
       </BrowserRouter>
      
