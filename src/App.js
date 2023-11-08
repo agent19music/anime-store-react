@@ -10,7 +10,7 @@ import Addanimeform from './Addanimeform.js';
 import Swal from 'sweetalert2';
 import Feedback from './Feedback.js';
 import Updateanime from './Updateanime.js';
-
+import './App.css';
 
 
 function App() {

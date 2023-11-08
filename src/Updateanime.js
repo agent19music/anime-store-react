@@ -1,76 +1,96 @@
-import React, {useState} from 'react'
-import Swal from "sweetalert2"
+import React, { useState } from 'react';
+import Swal from 'sweetalert2';
+import Footer from './Footer';
 
-export default function Updateanime({animes}) 
-{
-    const [title, setTitle] = useState()
-    const [rating, setRating] = useState()
-    const [image_url, setImageUrl] = useState()
+export default function Updateanime({ animes }) {
+    console.log(animes);
+  const [title, setTitle] = useState(animes.title||'');
+  const [rating, setRating] = useState(animes.rating||'');
+  const [poster, setPoster] = useState(animes.poster||'');
+  const [episodes, setEpisodes] = useState(animes.episodes||'');
 
 
-    console.log("DATA",animes);
-    function animesubmit(e)
-    {
-        e.preventDefault()
+  function animesubmit(e) {
+    e.preventDefault();
 
-        fetch(`http://localhost:8555/animes/${animes.id}`, {
-            method: "PATCH",
-            headers: {"Content-Type":"application/json" },
-            body: JSON.stringify({title: title,rating:rating, image:image_url, is_archived:false })
-        })
-        .then((res)=>res.json())
-        .then((res)=>{
-             
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'animes Updated successfully!',
-                showConfirmButton: false,
-                timer: 1500
-            })
-          
-        })
-        .catch((error)=>{
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'We have an error reaching our servers!',
-                
-              })
-        })
-
-      
-
-    }
-
+    fetch(`http://localhost:8555/animes/${animes.id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title, rating, poster, episodes }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Anime updated successfully!',
+          showConfirmButton: false,
+          timer: 900,
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'We have an error reaching our servers!',
+        });
+      });
+  }
 
   return (
-    <div className='container mt-5'>
-        <h4>UPDATE</h4>
-      
-        <div className=''>
-           <form onSubmit={animesubmit}>
-            <div className="mb-3">
-                <label className="form-label">Title</label>
-                <input type="text" value={title || animes.title} onChange={e=>setTitle(e.target.value)} className="form-control" required />
-            </div>
-            <div className="mb-3">
-                <label className="form-label">Description</label>
-                <input type="number" value={rating || animes.rating}  onChange={e=>setRating(e.target.value)} className="form-control" required />
-            </div>
-            <div className="mb-3">
-                <label className="form-label">Image url</label>
-                <input type="url" value={image_url || animes.image}  onChange={e=>setImageUrl(e.target.value)} className="form-control" required />
-            </div>
+    <div className="container mt-5">
+      <h4>UPDATE {animes.title}</h4>
 
-            
-            <button type="submit" className="btn btn-success">Update</button>
-            </form>
+      <div className="">
+        <form onSubmit={animesubmit}>
+          <div className="mb-3">
+            <label className="form-label text-white">Title</label>
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="form-control"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label text-white">Description</label>
+            <input
+              type="number"
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
+              className="form-control"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label text-white">Poster url</label>
+            <input
+              type="url"
+              value={poster}
+              onChange={(e) => setPoster(e.target.value)}
+              className="form-control"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label className="form-label text-white">Episodes</label>
+            <input
+              type="url"
+              value={episodes}
+              onChange={(e) => setEpisodes(e.target.value)}
+              className="form-control"
+              required
+            />
+          </div>
 
-        </div>
-        
+          <button type="submit" className="btn btn-success">
+            Update
+          </button>
+        </form>
+      </div>
 
-       
+      <Footer />
     </div>
-  )
+  );
 }

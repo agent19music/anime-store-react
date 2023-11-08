@@ -1,18 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
 export default function Anime({animes, deleteAnime}) {
+  const navigate = useNavigate();
 
 function options(animeId){
   Swal.fire({
-    title: "What changes are you doing to this anime ?",
+    title: "What changes are you making to this anime ?",
     showDenyButton: true,
     showCancelButton: true,
     confirmButtonText: "Update",
     denyButtonText: `Delete`
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire("Saved!", "", "success");
+      navigate(`/animes/${animes.id}`);
     } else if (result.isDenied) {
       deleteAnime(animeId);
     }
