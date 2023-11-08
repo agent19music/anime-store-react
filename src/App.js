@@ -8,6 +8,8 @@ import Cart from './Cart.js';
 import Contact from './Contact.js';
 import Addanimeform from './Addanimeform.js';
 import Swal from 'sweetalert2';
+import Feedback from './Feedback.js';
+import Updateanime from './Updateanime.js';
 
 
 
@@ -46,6 +48,20 @@ function addToCart(merchandise){
    
   }
 
+  const deleteAnime = (animeId) => {
+    fetch(`http://localhost:8555/animes/${animeId}`, {
+      method: 'DELETE',
+    })
+      .then(() => {
+        const updatedAnimes = animes.filter((anime) => anime.id !== animeId);
+        setAnimes(updatedAnimes);
+        Swal.fire('Anime deleted!', '', 'danger');
+      })
+      .catch((error) => {
+        console.error('Error deleting anime:', error);
+      });
+  };
+
   const addAnime = (anime) => {
     fetch('http://localhost:8555/animes', {
       method: 'POST',
@@ -75,11 +91,15 @@ function addToCart(merchandise){
         <Navbar mycart={mycart} />
         <Routes>
           <Route path="/topmerch" element={<Topmerch />} />
-          <Route path="/animelist" element={<Animelist animes={animes}/>} />
+          <Route path="/animelist" element={<Animelist animes={animes} deleteAnime={deleteAnime}/>} />
           <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart}/>} />
           <Route path="/contact" element={<Contact addFeedback={addFeedback}/>} />
           <Route path="/animemerch/:id" element={<Merchlist addToCart={addToCart} />} />
           <Route path="/addanimeform" element={<Addanimeform addAnime={addAnime}/>} />
+          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/updateanime" element={<Updateanime  animes={animes}/>} />
+
+
 
         </Routes>
       </BrowserRouter>

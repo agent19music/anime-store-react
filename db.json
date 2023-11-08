@@ -1123,17 +1123,7 @@
           "inStock": 4
         }
       ]
-    },
-    {
-      "releasedate": "2023-11-08",
-      "rating": "6",
-      "title": "Food Wars",
-      "episodes": "77",
-      "poster": "https://m.media-amazon.com/images/I/91IllbpUgWL.jpg",
-      "id": "pOnx5nK"
     }
   ],
-  "reviews" :[
-    
-  ]
+  "reviews": []
 }

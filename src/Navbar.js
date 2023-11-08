@@ -76,7 +76,7 @@ export default function Navbar({mycart}) {
             <Link className="dropdown-item" to="#">Toggle dark mode</Link>
           </li>
           <li>
-            <Link className="dropdown-item" to="#">User reviews</Link>
+            <Link className="dropdown-item" to="/feedback">User reviews</Link>
           </li>
         </ul>
       </div>

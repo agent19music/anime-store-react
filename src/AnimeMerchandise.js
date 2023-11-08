@@ -2,6 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 
 function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
+  
 
   return (
     <div>
@@ -26,7 +27,7 @@ function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
               ))}
             </div>
           ) : (
-            <p>No merchandise available for this anime.</p>
+            <p className='p-4 alert alert-warning'>Oops :/ looks like there's no merchandise available for this anime.</p>
           )}
         </div>
       ) : (
