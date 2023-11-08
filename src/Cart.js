@@ -1,8 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from './Footer';
+import Swal from 'sweetalert2';
 
-export default function Cart({ mycart, removeFromCart }) {
+export default function Cart({ mycart, removeFromCart,setMyCart }) {
+
+  function handlePay(){
+    Swal.fire({
+      title: "Payment successful!",
+      text: "Thank you for your purchase !!",
+      icon: "success"
+    }).then(() => {
+      setMyCart([])
+    })
+  }
+  
+
   const totalPrice = mycart.reduce((total, item) => total + item.price, 0);
 
   return (
@@ -14,31 +27,10 @@ export default function Cart({ mycart, removeFromCart }) {
       )}
       {mycart.length > 0 && (
         <div className='row'>
-          <table className='table table-striped table-dark'>
-            <thead>
-              <tr>
-                <th scope="col">Product Name</th>
-                <th scope="col">Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              {mycart.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.product_name}</td>
-                  <td>${item.price.toFixed(2)}</td>
-                </tr>
-              ))}
-              <tr className='total'>
-                <td className='text-right' width='80%'>
-                  Total
-                </td>
-                <td className='text-right'><button className='btn btn-success'>Pay ${totalPrice.toFixed(2)}</button></td>
-              </tr>
-            </tbody>
-          </table>
+          
 
           {mycart.map((item) => (
-            <div key={item.id} className='col-md-3 bg-dark text-white' id='picha'>
+            <div key={item.image} className='col-md-3 bg-dark text-white' id='picha'>
               <div className='card bg-dark text-white'>
                 <img src={item.image} className='card-img-top' alt='Loading...' />
                 <div className='card-body pd-3 bg-dark text-white'>
@@ -52,7 +44,30 @@ export default function Cart({ mycart, removeFromCart }) {
                 </div>
               </div>
             </div>
+            
           ))}
+          <table className='table table-striped table-dark'>
+            <thead>
+              <tr>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {mycart.map((item) => (
+                <tr key={item.image}>
+                  <td>{item.product_name}</td>
+                  <td>${item.price.toFixed(2)}</td>
+                </tr>
+              ))}
+              <tr className='total'>
+                <td className='text-right' width='80%'>
+                  Total
+                </td>
+                <td className='text-right'><button onClick={()=> handlePay()} className='btn btn-success'>Pay ${totalPrice.toFixed(2)}</button></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       )}
       <Footer />

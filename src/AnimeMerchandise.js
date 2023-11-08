@@ -12,7 +12,7 @@ function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
     <div>
       {anime ? (
         <div className="mt-5">
-          <h2>Merchandise</h2>
+          <h2 className='ml-3'>{anime.title} {`Merchandise`}</h2>
           {anime.merchandise && anime.merchandise.length > 0 ? (
             <div className="row">
               {anime.merchandise.map((item) => (

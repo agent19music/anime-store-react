@@ -91,8 +91,8 @@ function addToCart(merchandise){
         <Navbar mycart={mycart} />
         <Routes>
           <Route path="/topmerch" element={<Topmerch />} />
-          <Route path="/animelist" element={<Animelist animes={animes} deleteAnime={deleteAnime}/>} />
-          <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart}/>} />
+          <Route path="/animelist" element={<Animelist animes={animes} deleteAnime={deleteAnime} />} />
+          <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart} setMyCart={setMyCart}/>} />
           <Route path="/contact" element={<Contact addFeedback={addFeedback}/>} />
           <Route path="/animemerch/:id" element={<Merchlist addToCart={addToCart} />} />
           <Route path="/addanimeform" element={<Addanimeform addAnime={addAnime}/>} />
