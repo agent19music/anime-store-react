@@ -50,6 +50,7 @@ export default function Navbar({mycart}) {
      
       <NavLink className="text-reset me-3 " to="/cart">
         <i className="fas fa-shopping-cart"></i>
+       { mycart.length>0 && <span class="badge rounded-pill badge-notification bg-danger">{mycart.length}</span>}
       </NavLink>
 
       
@@ -62,8 +63,8 @@ export default function Navbar({mycart}) {
           data-mdb-toggle="dropdown"
           aria-expanded="false"
         >
-          <i className="fas fa-bell"></i>
-          <span className="badge rounded-pill badge-notification bg-danger">1</span>
+           <i class="fas fa-chevron-circle-down fa-lg"></i>
+           
         </Link>
         <ul
           className="dropdown-menu dropdown-menu-end"
