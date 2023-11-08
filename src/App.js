@@ -7,6 +7,7 @@ import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './Cart.js';
 import Contact from './Contact.js';
 import Addanimeform from './Addanimeform.js';
+import Swal from 'sweetalert2';
 
 
 
@@ -21,13 +22,28 @@ function App() {
 },[])
  
 function addToCart(merchandise){
-  if(!mycart.find((newguy)=> newguy.id===merchandise.id)){
-   setMyCart([...mycart,merchandise])
+  if(!mycart.find((newguy)=> newguy.image===merchandise.image)){
+   setMyCart([...mycart,merchandise]) 
+   Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Item has been added to cart",
+    showConfirmButton: false,
+    timer: 900
+  });
   }}
 
   function removeFromCart (merchandise){
    const newmycart = mycart.filter((newguy) => newguy.id !== merchandise.id);
-   setMyCart(newmycart)
+   setMyCart(newmycart);
+   Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "Item has been removed from cart",
+    showConfirmButton: false,
+    timer: 900
+  });
+   
   }
 
   const addAnime = (anime) => {
@@ -41,7 +57,7 @@ function addToCart(merchandise){
   return (
     <div className="App bg-dark text-white">
       <BrowserRouter>
-        <Navbar />
+        <Navbar mycart={mycart} />
         <Routes>
           <Route path="/topmerch" element={<Topmerch />} />
           <Route path="/animelist" element={<Animelist animes={animes}/>} />

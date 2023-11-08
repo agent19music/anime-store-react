@@ -2,18 +2,21 @@ import React, {useState} from 'react'
 import Footer from './Footer';
 
 export default function Addanimeform({addAnime}) {
-    const [description, setDescription] = useState('');
+    const [rating, setRating] = useState('');
     const [title, setTitle] = useState('');
     const [episodes, setEpisodes] = useState('');
     const [releasedate, setReleaseDate] = useState('');
+    const [poster, setPoster] = useState('');
+
 
     const handleSubmit = (event) => {
       event.preventDefault();
-      addAnime({ releasedate, description, title, episodes });
+      addAnime({ releasedate, rating, title, episodes,poster });
       setReleaseDate('');
-      setDescription('');
+      setRating('');
       setTitle('');
       setEpisodes('');
+      setPoster('');
     };
 
     return (
@@ -32,12 +35,12 @@ export default function Addanimeform({addAnime}) {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="description" className="form-label text-white" >Description:</label>
+                <label htmlFor="rating" className="form-label text-white" >rating:</label>
                 <input
-                  type="text"
-                  value={description}
-                  onChange={event => setDescription(event.target.value)}
-                  id="description"
+                  type="number"
+                  value={rating}
+                  onChange={event => setRating(event.target.value)}
+                  id="rating"
                   className="form-control"
                 />
               </div>
@@ -58,6 +61,16 @@ export default function Addanimeform({addAnime}) {
                   value={episodes}
                   onChange={event => setEpisodes(event.target.value)}
                   id="episodes"
+                  className="form-control"
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="poster" className="form-label text-white">Poster:</label>
+                <input
+                  type="text"
+                  value={poster}
+                  onChange={event => setPoster(event.target.value)}
+                  id="poster"
                   className="form-control"
                 />
               </div>

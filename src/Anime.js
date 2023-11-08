@@ -10,7 +10,7 @@ export default function Anime({animes}) {
               <img src={anime.poster} className="img-fluid" alt="Loading..." />
               <div className="card-body pd-3 bg-dark text-white">
                 <h5 className="card-title">{anime.title}</h5>
-                <p className="card-text">{anime.rating}</p>
+                <p className="card-text">Rating : {anime.rating}</p>
                 <div className='buttons'>
                 <Link to={`/animemerch/${anime.id}`} className="btn btn-success" >Shop</Link>
                 </div>

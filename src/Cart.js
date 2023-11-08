@@ -6,6 +6,7 @@ export default function Cart({mycart, removeFromCart}) {
   return (
     <div className='mt-5 bg-dark text-white'>
         {mycart.length <1 && <p className='p-5 alert alert-warning'>Oops ! Cart is empty. Shop around to get your items here ;D</p>}
+        {mycart.length>1 && console.log('hey')}
          <div className="row">
         {mycart.map((item) => (
           <div key={item.id} className="col-md-3 bg-dark text-white" id="picha">

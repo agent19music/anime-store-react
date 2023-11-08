@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-export default function Navbar() {
+export default function Navbar({mycart}) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
@@ -48,14 +48,14 @@ export default function Navbar() {
     
     <div className="d-flex align-items-center">
      
-      <NavLink className="text-reset me-3" to="/cart">
+      <NavLink className="text-reset me-3 " to="/cart">
         <i className="fas fa-shopping-cart"></i>
       </NavLink>
 
       
       <div className="dropdown">
         <Link
-          className="text-reset me-3 dropdown-toggle hidden-arrow"
+          className="text-reset me-3 dropdown-toggle hidden-arrow "
           to="#"
           id="navbarDropdownMenuLink"
           role="button"
@@ -76,7 +76,7 @@ export default function Navbar() {
             <Link className="dropdown-item" to="#">Toggle dark mode</Link>
           </li>
           <li>
-            <Link className="dropdown-item" to="#">Something else here</Link>
+            <Link className="dropdown-item" to="#">User reviews</Link>
           </li>
         </ul>
       </div>
