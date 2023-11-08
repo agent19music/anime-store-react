@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+import Footer from './Footer';
 
 function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
 
@@ -31,6 +32,7 @@ function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
       ) : (
         <p>Loading anime merchandise data...</p>
       )}
+      <Footer/>
     </div>
   );
 }

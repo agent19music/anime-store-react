@@ -1,7 +1,11 @@
 import React from 'react'
+import Footer from './Footer'
 
 export default function Topmerch() {
   return (
-    <div>Topmerch</div>
+    <div>Topmerch
+
+        <Footer/>
+    </div>
   )
 }

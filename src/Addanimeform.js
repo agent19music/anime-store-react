@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Footer from './Footer';
 
 export default function Addanimeform({addAnime}) {
     const [description, setDescription] = useState('');
@@ -64,6 +65,7 @@ export default function Addanimeform({addAnime}) {
             </form>
           </div>
         </div>
+        <Footer/>
       </div>
     )
   }

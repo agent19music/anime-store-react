@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Footer from './Footer'
 
 export default function Cart({mycart, removeFromCart}) {
   return (
@@ -13,7 +15,7 @@ export default function Cart({mycart, removeFromCart}) {
                 <h5 className="card-title">{item.product_name}</h5>
                 <p className="card-text">{item.price}</p>
                 <div className='buttons'>
-                <a href='' className="btn btn-danger " onClick={()=> removeFromCart(item)} >Remove</a>
+                <Link to='' className="btn btn-danger " onClick={()=> removeFromCart(item)} >Remove</Link>
                 </div>
 
               </div>
@@ -21,6 +23,7 @@ export default function Cart({mycart, removeFromCart}) {
           </div>
         ))}
       </div>
+      <Footer/>
      
     </div>
   )
