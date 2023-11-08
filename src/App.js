@@ -13,6 +13,7 @@ import Addanimeform from './Addanimeform.js';
 function App() {
   const[mycart, setMyCart] = useState([])
   const [animes, setAnimes] = useState([])
+  const [feedback, setFeedback] = useState([])
   useEffect(()=>{
     fetch('http://localhost:8555/animes')
     .then((res)=> res.json())
@@ -32,6 +33,9 @@ function addToCart(merchandise){
   const addAnime = (anime) => {
     setAnimes([...animes, anime]);
   };
+  const addFeedback = (comm) => {
+    setFeedback([...feedback, comm]);
+  };
 
 
   return (
@@ -42,7 +46,7 @@ function addToCart(merchandise){
           <Route path="/topmerch" element={<Topmerch />} />
           <Route path="/animelist" element={<Animelist animes={animes}/>} />
           <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart}/>} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact addFeedback={addFeedback}/>} />
           <Route path="/animemerch/:id" element={<Merchlist addToCart={addToCart} />} />
           <Route path="/addanimeform" element={<Addanimeform addAnime={addAnime}/>} />
 
