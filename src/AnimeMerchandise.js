@@ -1,24 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function AnimeMerchandise({ anime }) {
+function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
+
   return (
     <div>
       {anime ? (
-        <div>
-          <h1>{anime.title}</h1>
-          <p>{anime.description}</p>
-          <img src={anime.poster} alt={anime.title} />
-          
+        <div className="mt-5">
           <h2>Merchandise</h2>
           {anime.merchandise && anime.merchandise.length > 0 ? (
-            <div>
+            <div className="row">
               {anime.merchandise.map((item) => (
-                <div key={item.id}>
-                  <h3>{item.product_name}</h3>
-                  <p>{item.product_description}</p>
-                  <p>Price: ${item.price}</p>
-                  <p>In Stock: {item.inStock}</p>
-                  <img src={item.image} alt={item.product_name} />
+                <div key={item.id} className="col-md-4 mb-4">
+                  <div className="card bg-dark text-white">
+                    <img src={item.image} alt={item.product_name} className='card-img-top img-fluid' />
+                    <div className="card-body">
+                      <h3 className="card-title">{item.product_name}</h3>
+                      <p className="card-text">{item.product_description}</p>
+                      <p className="card-text">Price: ${item.price}</p>
+                      <p className="card-text">In Stock: {item.inStock}</p>
+                      <a href="#!" className="btn btn-success" onClick={()=>addToCart(item)}>Add to cart</a>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
