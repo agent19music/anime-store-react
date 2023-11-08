@@ -32,7 +32,7 @@ export default function Cart({ mycart, removeFromCart }) {
                 <td className='text-right' width='80%'>
                   Total
                 </td>
-                <td className='text-right'>${totalPrice.toFixed(2)}</td>
+                <td className='text-right'><button className='btn btn-success'>Pay ${totalPrice.toFixed(2)}</button></td>
               </tr>
             </tbody>
           </table>
