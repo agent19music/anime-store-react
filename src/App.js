@@ -47,8 +47,23 @@ function addToCart(merchandise){
   }
 
   const addAnime = (anime) => {
-    setAnimes([...animes, anime]);
+    fetch('http://localhost:8555/animes', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(anime),
+    })
+      .then((response) => response.json())
+      .then((newAnime) => {
+        
+        setAnimes([...animes, newAnime]);
+      })
+      .catch((error) => {
+        console.error('Error adding anime:', error);
+      });
   };
+  
   const addFeedback = (comm) => {
     setFeedback([...feedback, comm]);
   };

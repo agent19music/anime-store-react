@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Footer from './Footer';
+import Swal from 'sweetalert2';
 
 export default function Addanimeform({addAnime}) {
     const [rating, setRating] = useState('');
@@ -17,6 +18,14 @@ export default function Addanimeform({addAnime}) {
       setTitle('');
       setEpisodes('');
       setPoster('');
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Anime has been added successfully",
+        showConfirmButton: false,
+        timer: 900
+      });
+
     };
 
     return (
@@ -32,6 +41,7 @@ export default function Addanimeform({addAnime}) {
                   onChange={event => setReleaseDate(event.target.value)}
                   id="releasedate"
                   className="form-control"
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -42,6 +52,7 @@ export default function Addanimeform({addAnime}) {
                   onChange={event => setRating(event.target.value)}
                   id="rating"
                   className="form-control"
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -52,6 +63,7 @@ export default function Addanimeform({addAnime}) {
                   onChange={event => setTitle(event.target.value)}
                   id="title"
                   className="form-control"
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -62,6 +74,7 @@ export default function Addanimeform({addAnime}) {
                   onChange={event => setEpisodes(event.target.value)}
                   id="episodes"
                   className="form-control"
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -72,6 +85,7 @@ export default function Addanimeform({addAnime}) {
                   onChange={event => setPoster(event.target.value)}
                   id="poster"
                   className="form-control"
+                  required
                 />
               </div>
               <button type="submit" className="btn btn-success btn  md-2">Add Anime</button>
