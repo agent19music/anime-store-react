@@ -6,6 +6,7 @@ import Merchlist from './Merchlist.js';
 import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './Cart.js';
 import Contact from './Contact.js';
+import Addanimeform from './Addanimeform.js';
 
 
 
@@ -28,6 +29,10 @@ function addToCart(merchandise){
    setMyCart(newmycart)
   }
 
+  const addAnime = (anime) => {
+    setAnimes([...animes, anime]);
+  };
+
 
   return (
     <div className="App bg-dark text-white">
@@ -39,6 +44,8 @@ function addToCart(merchandise){
           <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart}/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/animemerch/:id" element={<Merchlist addToCart={addToCart} />} />
+          <Route path="/addanimeform" element={<Addanimeform addAnime={addAnime}/>} />
+
         </Routes>
       </BrowserRouter>
      

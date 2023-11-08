@@ -70,10 +70,10 @@ export default function Navbar() {
           aria-labelledby="navbarDropdownMenuLink"
         >
           <li>
-            <Link className="dropdown-item" to="#">Some news</Link>
+            <Link className="dropdown-item" to="/addanimeform">Add new anime</Link>
           </li>
           <li>
-            <Link className="dropdown-item" to="#">Another news</Link>
+            <Link className="dropdown-item" to="#">Toggle dark mode</Link>
           </li>
           <li>
             <Link className="dropdown-item" to="#">Something else here</Link>

@@ -12,22 +12,22 @@ export default function Contact() {
       </div>
       
       <div>
-        <Link href="" class="me-4 link-secondary">
+        <Link to="" class="me-4 link-secondary" target='blank'>
           <i class="fab fa-facebook-f"></i>
         </Link>
-        <Link href="" class="me-4 link-secondary">
+        <Link to="https://twitter.com/ufwsean" target='blank'class="me-4 link-secondary">
           <i class="fab fa-twitter"></i>
         </Link>
-        <Link href="" class="me-4 link-secondary">
+        <Link to="mailto:seanmotanya@gmail.com"target='blank' class="me-4 link-secondary">
           <i class="fab fa-google"></i>
         </Link>
-        <Link href="" class="me-4 link-secondary">
+        <Link to="" target='blank'class="me-4 link-secondary">
           <i class="fab fa-instagram"></i>
         </Link>
-        <Link href="" class="me-4 link-secondary">
+        <Link to="https://www.linkedin.com/in/sean-motanya-532619282/" target='blank' class="me-4 link-secondary">
           <i class="fab fa-linkedin"></i>
         </Link>
-        <Link href="" class="me-4 link-secondary">
+        <Link to="https://github.com/agent19music" target='blank' class="me-4 link-secondary">
           <i class="fab fa-github"></i>
         </Link>
       </div>
@@ -42,11 +42,10 @@ export default function Contact() {
                   <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             
             <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3 text-secondary"></i>LifeOnaRock
+              <i class="fas fa-gem me-3 text-secondary"></i>ANIME-STORE
             </h6>
             <p>
-              Here you can use rows and columns to organize your footer content. Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit.
+              The home of your favourite animes' merchandise and more !!
             </p>
           </div>
          
@@ -57,13 +56,13 @@ export default function Contact() {
               Navigate
             </h6>
             <p>
-              <Link to="/!" class="text-reset">Home</Link>
+              <Link to="/animelist" class="text-reset">Home</Link>
             </p>
             <p>
-              <Link to="/!" class="text-reset">About</Link>
+              <Link to="/topmerch" class="text-reset">Top Merch</Link>
             </p>
             <p>
-              <Link to="/!" class="text-reset">Contact</Link>
+              <Link to="/contact" class="text-reset">Contact</Link>
             </p>
             
           </div>
@@ -88,20 +87,20 @@ export default function Contact() {
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           
             <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-            <p><i class="fas fa-home me-3 text-secondary"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-home me-3 text-secondary"></i> Nairobi Bankai Towers</p>
             <p>
               <i class="fas fa-envelope me-3 text-secondary"></i>
-              info@example.com
+              seanmotanya@gamail.com
             </p>
-            <p><i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>
-            <p><i class="fas fa-print me-3 text-secondary"></i> + 01 234 567 89</p>
+            <p><i class="fas fa-phone me-3 text-secondary"></i> + 254 745 071 299</p>
+            <p><i class="fas fa-print me-3 text-secondary"></i> + 971 582 301 251</p>
           </div>
         </div>
       </div>
     </section>
     <div class="text-center p-4" >
       © 2023 Copyright:
-      <Link class="text-reset fw-bold" to="/">LifeOnaRock All rights reserved</Link>
+      <Link class="text-reset fw-bold" to="/">animestore All rights reserved</Link>
     </div>
     
   
