@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import Footer from './layout/Footer';
+import Footer from '../layout/Footer';
 import Swal from 'sweetalert2';
 
 export default function Addanimeform({addAnime}) {

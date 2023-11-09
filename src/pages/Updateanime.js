@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
-import Footer from './layout/Footer';
+import Footer from '../layout/Footer';
 
 export default function Updateanime({anime}) {
   const [title, setTitle] = useState(anime.title);

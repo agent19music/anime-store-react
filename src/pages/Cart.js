@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Footer from './layout/Footer';
+import Footer from '../layout/Footer';
 import Swal from 'sweetalert2';
 
 export default function Cart({ mycart, removeFromCart,setMyCart }) {

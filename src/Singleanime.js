@@ -1,5 +1,5 @@
 import React from 'react'
-import Updateanime from './Updateanime'
+import Updateanime from './pages/Updateanime'
 import { useParams } from 'react-router-dom'
 
 export default function Singleanime({animes}) {

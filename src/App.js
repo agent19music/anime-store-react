@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import Animelist from './layout/Animelist.js'
 import Navbar from './layout/Navbar.js';
-import Topmerch from './Topmerch.js';
+import Topmerch from './pages/Topmerch.js';
 import Merchlist from './Merchlist.js';
 import {BrowserRouter, Route, Routes } from 'react-router-dom';
-import Cart from './Cart.js';
-import Contact from './Contact.js';
-import Addanimeform from './Addanimeform.js';
+import Cart from './pages/Cart.js';
+import Contact from './pages/Contact.js';
+import Addanimeform from './pages/Addanimeform.js';
 import Swal from 'sweetalert2';
-import Feedback from './Feedback.js';
+import Feedback from './pages/Feedback.js';
 import './App.css';
 import Singleanime from './Singleanime.js';
 
