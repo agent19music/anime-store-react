@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Footer from './Footer';
 
 export default function Contact({ addFeedback }) {
-  const [description, setDescription] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [thoughts, setThoughts] = useState('');
@@ -10,9 +9,8 @@ export default function Contact({ addFeedback }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    addFeedback({ thoughts, description, name, email, rating });
+    addFeedback({ thoughts, name, email, rating });
     setThoughts('');
-    setDescription('');
     setName('');
     setEmail('');
     setRating(0);

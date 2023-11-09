@@ -83,7 +83,21 @@ function addToCart(merchandise){
   };
   
   const addFeedback = (comm) => {
-    setFeedback([...feedback, comm]);
+    fetch('http://localhost:8555/reviews', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(comm),
+    })
+      .then((response) => response.json())
+      .then((newFeedback) => {
+        
+        setFeedback([...feedback, newFeedback]);
+      })
+      .catch((error) => {
+        console.error('Error adding anime:', error);
+      });
   };
   const toggleDarkMode = () => {
     setIsDarkmode(!isDarkmode);

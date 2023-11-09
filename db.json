@@ -4,7 +4,7 @@
       "id": "1",
       "title": "Attack on Titan",
       "release_date": "2013",
-      "episodes": "88",
+      "episodes": "89",
       "mc": "Eren Yeager",
       "rating": "10",
       "description": "In a world where humanity is on the brink of extinction due to giant humanoid creatures known as Titans, a young man named Eren Yeager joins the fight to reclaim their walled city and uncover the truth behind these mysterious beings.",
@@ -64,7 +64,7 @@
           "product_name": "Kyoto high T shirt",
           "product_description": "Cotton T shirt with characters print",
           "price": 19.99,
-          "image": "https://thedya.in/cdn/shop/products/f_17.jpg?v=1686983458&width=713",
+          "image": "https://5.imimg.com/data5/ECOM/Default/2023/4/301482957/IC/AK/BU/144923032/f-17-500x500.jpg",
           "inStock": 20
         },
         {
@@ -1125,5 +1125,13 @@
       ]
     }
   ],
-  "reviews": []
+  "reviews": [
+    {
+      "thoughts": "iko poa breh",
+      "name": "Sean Motanya ",
+      "email": "seanmotanya@gmail.com",
+      "rating": 5,
+      "id": 1
+    }
+  ]
 }

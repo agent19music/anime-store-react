@@ -28,6 +28,7 @@ function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
                       alt={item.product_name}
                       className={`card-img-top img-fluid ${imageLoading ? 'd-none' : ''}`}
                       onLoad={handleImageLoad}
+                     
                     />
                     <div className="card-body">
                       <h3 className="card-title">{item.product_name}</h3>
