@@ -3,7 +3,7 @@ import Footer from './Footer'
 
 export default function Topmerch() {
   return (
-    <div>Topmerch
+    <div className='container mx-auto'>Topmerch
 
         <Footer/>
     </div>

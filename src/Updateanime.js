@@ -1,19 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Footer from './Footer';
 
-export default function Updateanime({ animes }) {
-    console.log(animes);
-  const [title, setTitle] = useState(animes.title||'');
-  const [rating, setRating] = useState(animes.rating||'');
-  const [poster, setPoster] = useState(animes.poster||'');
-  const [episodes, setEpisodes] = useState(animes.episodes||'');
+export default function Updateanime() {
+  const location= useLocation()
+  const anime = location.state.anime
+  const [title, setTitle] = useState('');
+  const [rating, setRating] = useState('');
+  const [poster, setPoster] = useState('');
+  const [episodes, setEpisodes] = useState('');
 
+  useEffect(() => {
+    setTitle(anime.title);
+    setRating(parseInt(anime.rating, 10));
+    setPoster(anime.poster);
+    setEpisodes(anime.episodes);
+  }, [anime]);
 
   function animesubmit(e) {
     e.preventDefault();
 
-    fetch(`http://localhost:8555/animes/${animes.id}`, {
+    fetch(`http://localhost:8555/animes/${anime.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title, rating, poster, episodes }),
@@ -39,7 +47,7 @@ export default function Updateanime({ animes }) {
 
   return (
     <div className="container mt-5">
-      <h4>UPDATE {animes.title}</h4>
+      <h4>UPDATE {anime.title}</h4>
 
       <div className="">
         <form onSubmit={animesubmit}>
@@ -47,7 +55,7 @@ export default function Updateanime({ animes }) {
             <label className="form-label text-white">Title</label>
             <input
               type="text"
-              value={title}
+              value={anime.title}
               onChange={(e) => setTitle(e.target.value)}
               className="form-control"
               required

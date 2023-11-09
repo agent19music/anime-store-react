@@ -36,7 +36,7 @@ function addToCart(merchandise){
   }}
 
   function removeFromCart (merchandise){
-   const newmycart = mycart.filter((newguy) => newguy.id !== merchandise.id);
+   const newmycart = mycart.filter((newguy) => newguy.image !== merchandise.image);
    setMyCart(newmycart);
    Swal.fire({
     position: "top-end",

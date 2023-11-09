@@ -23,10 +23,10 @@ export default function Navbar({mycart}) {
      
       <Link className="navbar-brand mt-2 mt-lg-0" to="#">
         <img
-          src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-          height="15"
-          alt="MDB Logo"
-          loading="lazy"
+          src="/logo.png"
+          height="70"
+          alt="Logo"
+          
         />
       </Link>
     
