@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Footer from './Footer';
+import Footer from './layout/Footer';
+import Swal from 'sweetalert2';
 
 export default function Contact({ addFeedback }) {
   const [name, setName] = useState('');
@@ -14,6 +15,13 @@ export default function Contact({ addFeedback }) {
     setName('');
     setEmail('');
     setRating(0);
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Your feedback has been received !!",
+      showConfirmButton: false,
+      timer: 900
+    });
   };
 
   const handleStarClick = (star) => {

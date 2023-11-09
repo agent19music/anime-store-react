@@ -1,5 +1,5 @@
 import React from 'react'
-import Anime from './Anime'
+import Anime from '../Anime'
 import Footer from './Footer'
 
 export default function Animecollection({animes, deleteAnime}) {

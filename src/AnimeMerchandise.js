@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Footer from './Footer';
+import Footer from './layout/Footer';
 
 function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
   const [imageLoading, setImageLoading] = useState(true);
@@ -12,12 +12,12 @@ function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
     <div>
       {anime ? (
         <div className="mt-5">
-          <h2 className='ml-3'>{anime.title} {`Merchandise`}</h2>
+          <h2 className="ml-3">{anime.title} {`Merchandise`}</h2>
           {anime.merchandise && anime.merchandise.length > 0 ? (
             <div className="row">
               {anime.merchandise.map((item) => (
                 <div key={item.id} className="col-md-3 mb-4">
-                  <div className="card bg-dark text-white">
+                  <div className="card bg-dark text-white d-flex flex-column h-100 overflow-hidden">
                     {imageLoading && (
                       <div className="spinner-border" role="status">
                         <span className="visually-hidden">Loading...</span>
@@ -28,7 +28,6 @@ function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
                       alt={item.product_name}
                       className={`card-img-top img-fluid ${imageLoading ? 'd-none' : ''}`}
                       onLoad={handleImageLoad}
-                     
                     />
                     <div className="card-body">
                       <h3 className="card-title">{item.product_name}</h3>
@@ -44,7 +43,9 @@ function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
               ))}
             </div>
           ) : (
-            <p className="p-4 alert alert-warning">Oops :/ looks like there's no merchandise available for this anime.</p>
+            <p className="p-4 alert alert-warning">
+              Oops :/ looks like there's no merchandise available for this anime.
+            </p>
           )}
         </div>
       ) : (

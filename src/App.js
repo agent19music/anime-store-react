@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Animelist from './Animelist.js'
-import Navbar from './Navbar.js';
+import Animelist from './layout/Animelist.js'
+import Navbar from './layout/Navbar.js';
 import Topmerch from './Topmerch.js';
 import Merchlist from './Merchlist.js';
 import {BrowserRouter, Route, Routes } from 'react-router-dom';
