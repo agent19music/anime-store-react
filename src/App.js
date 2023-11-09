@@ -9,14 +9,16 @@ import Contact from './Contact.js';
 import Addanimeform from './Addanimeform.js';
 import Swal from 'sweetalert2';
 import Feedback from './Feedback.js';
-import Updateanime from './Updateanime.js';
 import './App.css';
+import Singleanime from './Singleanime.js';
 
 
 function App() {
   const[mycart, setMyCart] = useState([])
   const [animes, setAnimes] = useState([])
   const [feedback, setFeedback] = useState([])
+  const [isDarkmode, setIsDarkmode] = useState(true)
+
   useEffect(()=>{
     fetch('http://localhost:8555/animes')
     .then((res)=> res.json())
@@ -83,21 +85,24 @@ function addToCart(merchandise){
   const addFeedback = (comm) => {
     setFeedback([...feedback, comm]);
   };
-
+  const toggleDarkMode = () => {
+    setIsDarkmode(!isDarkmode);
+  };
+  const toggle = isDarkmode ? ' bg-dark text-white' : 'bg-light text-black';
 
   return (
-    <div className="App bg-dark text-white">
+    <div className={toggle}>
       <BrowserRouter>
-        <Navbar mycart={mycart} />
+        <Navbar mycart={mycart} toggleDarkMode={toggleDarkMode} />
         <Routes>
           <Route path="/topmerch" element={<Topmerch />} />
           <Route path="/animelist" element={<Animelist animes={animes} deleteAnime={deleteAnime} />} />
-          <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart} setMyCart={setMyCart}/>} />
+          <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart} setMyCart={setMyCart} toggle={toggle}/>} />
           <Route path="/contact" element={<Contact addFeedback={addFeedback}/>} />
           <Route path="/animemerch/:id" element={<Merchlist addToCart={addToCart} />} />
           <Route path="/addanimeform" element={<Addanimeform addAnime={addAnime}/>} />
           <Route path="/feedback" element={<Feedback />} />
-          <Route path="/updateanime" element={<Updateanime  animes={animes}/>} />
+          <Route path="/animelist/:title" element={<Singleanime  animes={animes}/>} />
 
 
 

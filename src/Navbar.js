@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-export default function Navbar({mycart}) {
+export default function Navbar({mycart, toggleDarkMode}) {
+  
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
@@ -74,7 +75,7 @@ export default function Navbar({mycart}) {
             <Link className="dropdown-item" to="/addanimeform">Add new anime</Link>
           </li>
           <li>
-            <Link className="dropdown-item" to="#">Toggle dark mode</Link>
+            <Link className="dropdown-item" onClick={()=> toggleDarkMode()} to="#">Toggle dark mode</Link>
           </li>
           <li>
             <Link className="dropdown-item" to="/feedback">User reviews</Link>

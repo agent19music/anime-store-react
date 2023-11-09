@@ -16,7 +16,7 @@ function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
           {anime.merchandise && anime.merchandise.length > 0 ? (
             <div className="row">
               {anime.merchandise.map((item) => (
-                <div key={item.id} className="col-md-4 mb-4">
+                <div key={item.id} className="col-md-3 mb-4">
                   <div className="card bg-dark text-white">
                     {imageLoading && (
                       <div className="spinner-border" role="status">

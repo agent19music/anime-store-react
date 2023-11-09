@@ -1,7 +1,13 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
 export default function Anime({animes, deleteAnime}) {
+  const [imageLoading, setImageLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setImageLoading(false);
+  };
+
   const navigate = useNavigate();
 
 function options(anime){
@@ -13,7 +19,7 @@ function options(anime){
     denyButtonText: `Delete`
   }).then((result) => {
     if (result.isConfirmed) {
-      navigate(`/updateanime`, {state:{anime}});
+      navigate(`/animelist/${anime.title}`);
     } else if (result.isDenied) {
       Swal.fire({
         title: "Are you sure?",
@@ -44,7 +50,12 @@ function options(anime){
         {animes.map((anime, index) => (
           <div key={index} className="col-md-3 bg-dark text-white" id="picha">
             <div className="card">
-              <img src={anime.poster} className="img-fluid" alt="Loading..." onClick={()=> options(anime)} />
+            {imageLoading && (
+                      <div className="spinner-border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                      </div>
+                    )}
+              <img src={anime.poster} className={`card-img-top img-fluid ${imageLoading ? 'd-none' : ''}`} alt="Loading..." onLoad={handleImageLoad} onClick={()=> options(anime)} />
               <div className="card-body pd-3 bg-dark text-white">
                 <h5 className="card-title">{anime.title}</h5>
                 <p className="card-text">Rating : {anime.rating}</p>

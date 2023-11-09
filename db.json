@@ -54,7 +54,7 @@
       "release_date": "2020",
       "episodes": "47",
       "mc": "Itadori Yuuji",
-      "rating": "8.9",
+      "rating": "9.1",
       "description": "When cursed spirits and dark sorcery threaten the world, Itadori Yuuji becomes a reluctant hero by ingesting a powerful curse and joining the Jujutsu Sorcerers to combat these supernatural threats.",
       "poster": "https://m.media-amazon.com/images/I/818DUzqnwES.jpg",
       "merchandise": [
@@ -153,12 +153,12 @@
         },
         {
           "id": 4,
-          "product_type": "Adhesives",
-          "product_name": "Bleach wall poster",
-          "product_description": "Large bleach wall poster",
-          "price": 17.99,
-          "image": "https://m.media-amazon.com/images/I/611abSpmTqL.jpg",
-          "inStock": 15
+          "product_type": "Toys",
+          "product_name": "Rukia Funko Figure",
+          "product_description": "Kuchiki Rukia fan action figure",
+          "price": 29.99,
+          "image": "https://media.entertainmentearth.com/assets/images/a39b6c46e9ea4f2eb57deaadd2b05053lg.jpg",
+          "inStock": 10
         },
         {
           "id": 5,
@@ -171,12 +171,12 @@
         },
         {
           "id": 6,
-          "product_type": "Toys",
-          "product_name": "Rukia Funko Figure",
-          "product_description": "Kuchiki Rukia fan action figure",
-          "price": 29.99,
-          "image": "https://media.entertainmentearth.com/assets/images/a39b6c46e9ea4f2eb57deaadd2b05053lg.jpg",
-          "inStock": 10
+          "product_type": "Adhesives",
+          "product_name": "Bleach wall poster",
+          "product_description": "Large bleach wall poster",
+          "price": 17.99,
+          "image": "https://m.media-amazon.com/images/I/611abSpmTqL.jpg",
+          "inStock": 15
         },
         {
           "id": 7,
