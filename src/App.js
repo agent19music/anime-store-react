@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import Animelist from './layout/Animelist.js'
 import Navbar from './layout/Navbar.js';
-import Topmerch from './pages/Topmerch.js';
 import Merchlist from './components/Merchlist.js';
 import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './pages/Cart.js';
@@ -116,7 +115,6 @@ function addToCart(merchandise){
         <Routes>
           <Route path='/' element={<Layout/> } /> 
           <Route index element={<Home />} />
-          <Route path="/topmerch" element={<Topmerch />} />
           <Route path="/animelist" element={<Animelist animes={animes} deleteAnime={deleteAnime} toggle={toggle}/>} />
           <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart} setMyCart={setMyCart} toggle2={toggle2} toggle={toggle} />} />
           <Route path="/contact" element={<Contact addFeedback={addFeedback}/>} />
