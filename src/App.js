@@ -107,6 +107,7 @@ function addToCart(merchandise){
   };
   const toggle = isDarkmode ? ' bg-dark text-white' : 'bg-light text-black'
   const toggle2 = isDarkmode ? 'dark':'light';
+  const toggle3 = isDarkmode ? 'white': 'black'
 
   return (
     <div className={toggle}>
@@ -117,9 +118,9 @@ function addToCart(merchandise){
           <Route index element={<Home />} />
           <Route path="/animelist" element={<Animelist animes={animes} deleteAnime={deleteAnime} toggle={toggle}/>} />
           <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart} setMyCart={setMyCart} toggle2={toggle2} toggle={toggle} />} />
-          <Route path="/contact" element={<Contact addFeedback={addFeedback}/>} />
+          <Route path="/contact" element={<Contact addFeedback={addFeedback} toggle={toggle} toggle3={toggle3}/>} />
           <Route path="/animemerch/:id" element={<Merchlist addToCart={addToCart} toggle={toggle} />} />
-          <Route path="/addanimeform" element={<Addanimeform addAnime={addAnime} toggle={toggle}/>} />
+          <Route path="/addanimeform" element={<Addanimeform addAnime={addAnime} toggle={toggle} toggle3={toggle3}/>} />
           <Route path="/feedback" element={<Feedback toggle={toggle} />} />
           <Route path="/animelist/:title" element={<Singleanime  animes={animes}/>} />
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Footer from '../layout/Footer';
 import Swal from 'sweetalert2';
 
-export default function Contact({ addFeedback }) {
+export default function Contact({ addFeedback,toggle, toggle3 }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [thoughts, setThoughts] = useState('');
@@ -32,7 +32,7 @@ export default function Contact({ addFeedback }) {
     const stars = [1, 2, 3, 4, 5];
     return (
       <div className="mb-3">
-        <label className="form-label text-white">Rate the site:</label>
+        <label className={`form-label text-${toggle3}`}>Rate the site:</label>
         <div>
           {stars.map((star) => (
             <span
@@ -52,9 +52,9 @@ export default function Contact({ addFeedback }) {
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-6">
-          <form onSubmit={handleSubmit} className="bg-dark text-white p-5 my-5">
+          <form onSubmit={handleSubmit} className={`${toggle} p-5 my-5`}>
             <div className="mb-3">
-              <label htmlFor="name" className="form-label text-white">
+              <label htmlFor="name" className={`form-label text-${toggle3}`}>
                 Name:
               </label>
               <input
@@ -67,7 +67,7 @@ export default function Contact({ addFeedback }) {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="email" className="form-label text-white">
+              <label htmlFor="email" className={`form-label text-${toggle3}`}>
                 Email:
               </label>
               <input
@@ -79,7 +79,7 @@ export default function Contact({ addFeedback }) {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="thoughts" className="form-label text-white">
+              <label htmlFor="thoughts" className={`form-label text-${toggle3}`}>
                 Thoughts:
               </label>
               <input

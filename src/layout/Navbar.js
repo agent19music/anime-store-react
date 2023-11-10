@@ -35,9 +35,7 @@ export default function Navbar({mycart, toggleDarkMode, toggle, toggle2}) {
         <li className="nav-item">
           <Link className="nav-link" to="/animelist">Home</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/topmerch">Top Merch</Link>
-        </li>
+        
         <li className="nav-item">
           <Link className="nav-link" to="/contact">Contact Us</Link>
         </li>
@@ -83,38 +81,7 @@ export default function Navbar({mycart, toggleDarkMode, toggle, toggle2}) {
         </ul>
       </div>
      
-      <div className="dropdown">
-        <Link
-          className="dropdown-toggle d-flex align-items-center hidden-arrow"
-          to="#"
-          id="navbarDropdownMenuAvatar"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <img
-            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-            className="rounded-circle"
-            height="25"
-            alt="Black and White Portrait of a Man"
-            loading="lazy"
-          />
-        </Link>
-        <ul
-          className="dropdown-menu dropdown-menu-end"
-          aria-labelledby="navbarDropdownMenuAvatar"
-        >
-          <li>
-            <Link className="dropdown-item" to="#">My profile</Link>
-          </li>
-          <li>
-            <Link className="dropdown-item" to="#">Settings</Link>
-          </li>
-          <li>
-            <Link className="dropdown-item" to="#">Logout</Link>
-          </li>
-        </ul>
-      </div>
+     
     </div>
    
   </div>

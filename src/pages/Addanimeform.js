@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Footer from '../layout/Footer';
 import Swal from 'sweetalert2';
 
-export default function Addanimeform({addAnime,toggle}) {
+export default function Addanimeform({addAnime,toggle,toggle3}) {
     const [rating, setRating] = useState('');
     const [title, setTitle] = useState('');
     const [episodes, setEpisodes] = useState('');
@@ -34,7 +34,7 @@ export default function Addanimeform({addAnime,toggle}) {
           <div className='col-6'>
             <form onSubmit={handleSubmit} className={`${toggle} p-5 my-5`}>
               <div className="mb-3">
-                <label htmlFor="releasedate" className="form-label text-white">Release Date:</label>
+                <label htmlFor="releasedate" className={`form-label text-${toggle3}`}>Release Date:</label>
                 <input
                   type="date"
                   value={releasedate}
@@ -45,7 +45,7 @@ export default function Addanimeform({addAnime,toggle}) {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="rating" className="form-label text-white" >rating:</label>
+                <label htmlFor="rating" className={`form-label text-${toggle3}`} >rating:</label>
                 <input
                   type="number"
                   value={rating}
@@ -56,7 +56,7 @@ export default function Addanimeform({addAnime,toggle}) {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="title" className="form-label text-white">Title:</label>
+                <label htmlFor="title" className={`form-label text-${toggle3}`}>Title:</label>
                 <input
                   type="text"
                   value={title}
@@ -67,7 +67,7 @@ export default function Addanimeform({addAnime,toggle}) {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="episodes" className="form-label text-white">Episodes:</label>
+                <label htmlFor="episodes" className={`form-label text-${toggle3}`}>Episodes:</label>
                 <input
                   type="number"
                   value={episodes}
@@ -78,7 +78,7 @@ export default function Addanimeform({addAnime,toggle}) {
                 />
               </div>
               <div className="mb-3">
-                <label htmlFor="poster" className="form-label text-white">Poster:</label>
+                <label htmlFor="poster" className={`form-label text-${toggle3}`}>Poster:</label>
                 <input
                   type="text"
                   value={poster}
