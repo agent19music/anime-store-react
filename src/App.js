@@ -13,6 +13,7 @@ import Singleanime from './components/Singleanime.js';
 import Layout from './layout/layout.js';
 import Home from './pages/Home.js';
 import Termsofservice from './pages/Termsofservice.js';
+import DonatePage from './pages/Donate.js';
 
 
 function App() {
@@ -125,6 +126,8 @@ function addToCart(merchandise){
           <Route path="/feedback" element={<Feedback toggle={toggle} />} />
           <Route path="/animelist/:title" element={<Singleanime  animes={animes}/>} />
           <Route path="/termsofservice" element={<Termsofservice  toggle={toggle} toggle2={toggle2} toggle3={toggle3}  />} />
+          <Route path="/donate" element={<DonatePage  toggle={toggle} toggle2={toggle2} toggle3={toggle3}  />} />
+
 
 
 

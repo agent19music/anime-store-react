@@ -12,7 +12,7 @@ export default function Footer() {
       </div>
       
       <div>
-        <Link to="" class="me-4 link-secondary" target='blank'>
+        <Link to="https://www.facebook.com/sean.monroe.9003?mibextid=ZbWKwL" class="me-4 link-secondary" target='blank'>
           <i class="fab fa-facebook-f"></i>
         </Link>
         <Link to="https://twitter.com/ufwsean" target='blank'class="me-4 link-secondary">
@@ -21,7 +21,7 @@ export default function Footer() {
         <Link to="mailto:seanmotanya@gmail.com"target='blank' class="me-4 link-secondary">
           <i class="fab fa-google"></i>
         </Link>
-        <Link to="" target='blank'class="me-4 link-secondary">
+        <Link to="https://instagram.com/ufwsean?igshid=OGQ5ZDc2ODk2ZA==" target='blank'class="me-4 link-secondary">
           <i class="fab fa-instagram"></i>
         </Link>
         <Link to="https://www.linkedin.com/in/sean-motanya-532619282/" target='blank' class="me-4 link-secondary">
@@ -59,7 +59,7 @@ export default function Footer() {
               <Link to="/animelist" class="text-reset">Home</Link>
             </p>
             <p>
-              <Link to="/topmerch" class="text-reset">Top Merch</Link>
+              <Link to="/feedback" class="text-reset">User Feedback</Link>
             </p>
             <p>
               <Link to="/contact" class="text-reset">Contact</Link>
@@ -74,7 +74,7 @@ export default function Footer() {
               More
             </h6>
             <p>
-              <Link to="/!" class="text-reset">Donate</Link>
+              <Link to="/donate" class="text-reset">Donate</Link>
             </p>
             <p>
               <Link to="/termsofservice" class="text-reset">Terms of service</Link>
