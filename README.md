@@ -1,6 +1,6 @@
 #   ANIME STORE REACT
 #   BY SEAN NYANDUSI 10/11/2023
-![Project Image](images/project_image.png)
+![Project Image](/demo.png)
 
 ## Table of Contents
 
