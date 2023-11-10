@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+#   ANIME STORE REACT
+#   BY SEAN NYANDUSI 10/11/2023
+![Project Image](images/project_image.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Overview](#overview)
+- [Features](#features)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-In the project directory, you can run:
 
-### `npm start`
+## Overview
+This is a simple web application that allows you to manage and explore anime information, including details about each anime and the merchandise related to it. Users can view, add, update, and delete anime entries, and also explore and purchase merchandise associated with each anime.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
+- View a list of anime with details like title, rating, and number of episodes.
+- Add new anime entries to the database.
+- Update existing anime entries.
+- Delete anime entries from the database.
+- Explore and shop for merchandise related to each anime.
+- Add merchandiseto cart using a "Add to cart" button 
+- Buy merchandise by clicking the "pay" button on the cart
+- User-friendly interface with a responsive design.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
+- React
+- CSS
+- Bootstrap
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
+- View Anime:
+ Launch the application and browse the list of available anime.
+ Click on the shop button to view merchandise details.
+ Click on the anime for delete, update options.
 
-### `npm run build`
+- Explore Merchandise:
+ Click the "Shop" button on an anime entry to view related merchandise.
+ Click the "Add to cart" button on a merchandise item to add it to the cart.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Delete Anime:
+  Click the "Delete" button on an anime entry to remove it from the database.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Update Anime:
+  Click the "Update" button on an anime entry.
+  Modify the details you want to update.
+  Click "Update" to save your changes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Add Anime:
+ Click the "Add New Anime" link.
+ Fill in the details of the new anime, such as title, release date, description, poster URL,  episodes, and rating.
+ Click "Add Anime" to add the new entry.
 
-### `npm run eject`
+## Known Bugs
+- The app work fine.
+## Contributing
+- Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Fork the project.
+- Create a new branch for your feature or bug fix: git checkout -b feature/your-feature-name or bugfix/your-bugfix-name.
+- Make your changes.
+- Commit your changes: git commit -m 'Add new feature'.
+- Push your branch: git push origin feature/your-feature-name.
+- Submit a pull request.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Support and contact details
+- email :: seanmotanya@gmail.com
+- Phone :: +254745071299
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### License
+*Licenced under the MIT Licence
+Copyright (c) 2023 **Sean Nyandusi
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Setup
+```bash
+git clone git@github.com:agent19music/anime-store-react.git
+cd anime-store
+npm install
+npm start
