@@ -10,11 +10,11 @@ export default function Feedback({toggle}) {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container" id='feedback'>
       <div className="row mt-5">
         {feedback.map((feedback, index) => (
           <div key={index} className='col-md-3 mb-4'>
-            <div className="card d-flex flex-column h-100">
+            <div className="card d-flex flex-column h-70">
               <div className={`card-body ${toggle} flex-grow-1`}>
                 <h5 className="card-title pb-3">{feedback.name}</h5>
                 <h6 className='card-text pb-2'>{feedback.email}</h6>
