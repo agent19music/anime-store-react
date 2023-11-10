@@ -5,7 +5,7 @@ export default function Navbar({mycart, toggleDarkMode, toggle, toggle2}) {
   
   return (
     <div>
- <nav className={`navbar navbar-expand-lg navbar-${toggle2} ${toggle}`}>
+ <nav className={`navbar navbar-expand-lg navbar-${toggle2} ${toggle} fixed-top`}>
   <div className="container-fluid">
        <button
       className="navbar-toggler"
