@@ -52,7 +52,7 @@
       "id": "2",
       "title": "Jujutsu Kaisen",
       "release_date": "2020",
-      "episodes": "47",
+      "episodes": "49",
       "mc": "Itadori Yuuji",
       "rating": "9.1",
       "description": "When cursed spirits and dark sorcery threaten the world, Itadori Yuuji becomes a reluctant hero by ingesting a powerful curse and joining the Jujutsu Sorcerers to combat these supernatural threats.",
@@ -1146,6 +1146,13 @@
       "email": "Daddybankai@rukia.com",
       "rating": 5,
       "id": 3
+    },
+    {
+      "thoughts": "I recently stumbled upon your website while searching for some of my favorite anime merchandise, and I must say, I was thoroughly impressed! The wide range of products you offer is truly commendable. From manga collections to action figures, clothing, posters, and more, it’s like a paradise for anime enthusiasts like me.  The website layout is clean and user-friendly, making it easy to navigate through the different categories. The search functionality is efficient, helping me find exactly what I’m looking for in no time.  What I appreciate the most is the detailed product descriptions and high-quality images. They give a clear idea of what to expect, which is extremely helpful when shopping online.  The checkout process was smooth and secure, and the delivery was prompt. The items were well-packaged, ensuring they arrived in perfect condition.  However, I would suggest adding a filter option based on price, popularity, and new arrivals. This would enhance the shopping experience even further.  Overall, I had a fantastic shopping experience on your website. Keep up the good work! Looking forward to more anime merchandise additions in the future",
+      "name": "Kelvin",
+      "email": "kelvin2@example.com",
+      "rating": 4,
+      "id": 4
     }
   ]
 }

@@ -62,7 +62,7 @@ export default function Navbar({mycart, toggleDarkMode, toggle, toggle2}) {
           data-mdb-toggle="dropdown"
           aria-expanded="false"
         >
-           <i class="fas fa-chevron-circle-down fa-lg"></i>
+           <i className="fas fa-chevron-circle-down fa-lg"></i>
            
         </Link>
         <ul

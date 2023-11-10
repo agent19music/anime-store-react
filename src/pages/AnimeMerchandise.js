@@ -14,7 +14,7 @@ function AnimeMerchandise({ anime, addToCart, removeFromCart, toggle }) {
       {anime ? (
         <div className="mt-5">
           <div id='add'>
-          <h2 className="ml-3">{anime.title} {`Merchandise`} <i class="fas fa-circle-plus"></i></h2>
+          <h2 className="ml-3">{anime.title} {`Merchandise`} <i className="fas fa-circle-plus"></i></h2>
           </div>
           {anime.merchandise && anime.merchandise.length > 0 ? (
             <div className="row">

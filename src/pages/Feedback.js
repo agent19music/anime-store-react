@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Footer from '../layout/Footer'
 
 export default function Feedback({toggle}) {
   const [feedback, setFeedback] = useState([]);
@@ -25,6 +26,7 @@ export default function Feedback({toggle}) {
           </div>
         ))}
       </div>
+      <Footer/>
     </div>
   );
 }
