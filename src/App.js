@@ -23,7 +23,7 @@ function App() {
   const [isDarkmode, setIsDarkmode] = useState(true)
 
   useEffect(()=>{
-    fetch('http://localhost:8555/animes')
+    fetch('https://anime-store-db.onrender.com/animes')
     .then((res)=> res.json())
     .then((res)=> setAnimes(res))
 },[])
@@ -54,7 +54,7 @@ function addToCart(merchandise){
   }
 
   const deleteAnime = (animeId) => {
-    fetch(`http://localhost:8555/animes/${animeId}`, {
+    fetch(`https://anime-store-db.onrender.com/animes/${animeId}`, {
       method: 'DELETE',
     })
       .then(() => {
@@ -68,7 +68,7 @@ function addToCart(merchandise){
   };
 
   const addAnime = (anime) => {
-    fetch('http://localhost:8555/animes', {
+    fetch('https://anime-store-db.onrender.com/animes', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ function addToCart(merchandise){
 
   
   const addFeedback = (comm) => {
-    fetch('http://localhost:8555/reviews', {
+    fetch('https://anime-store-db.onrender.com/reviews', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

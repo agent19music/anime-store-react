@@ -7,7 +7,7 @@ export default function Merchlist({addToCart, removeFromCart, toggle}) {
   const [anime, setAnime] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8555/animes/${id}`)
+    fetch(`https://anime-store-db.onrender.com/animes/${id}`)
       .then((res) => res.json())
       .then((data) => setAnime(data))
       .catch((error) => console.error(error));

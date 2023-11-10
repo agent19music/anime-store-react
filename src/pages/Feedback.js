@@ -5,7 +5,7 @@ export default function Feedback({toggle}) {
   const [feedback, setFeedback] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8555/reviews')
+    fetch('https://anime-store-db.onrender.com/reviews')
       .then((res) => res.json())
       .then((res) => setFeedback(res));
   }, []);

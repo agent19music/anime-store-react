@@ -12,7 +12,7 @@ export default function Updateanime({anime}) {
   function animesubmit(e) {
     e.preventDefault();
   
-    fetch(`http://localhost:8555/animes/${anime.id}`, {
+    fetch(`https://anime-store-db.onrender.com/animes/${anime.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ title: title, rating: viewer_rating, poster: poster_url, episodes:episode_count})
