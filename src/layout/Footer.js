@@ -77,7 +77,7 @@ export default function Footer() {
               <Link to="/!" class="text-reset">Donate</Link>
             </p>
             <p>
-              <Link to="/!" class="text-reset">Terms of service</Link>
+              <Link to="/termsofservice" class="text-reset">Terms of service</Link>
             </p>
             
           </div>
