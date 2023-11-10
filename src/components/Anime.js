@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
-export default function Anime({animes, deleteAnime}) {
+export default function Anime({animes, deleteAnime, toggle}) {
   const [imageLoading, setImageLoading] = useState(true);
 
   const handleImageLoad = () => {
@@ -48,7 +48,7 @@ function options(anime){
     <div className='mt-5'>
          <div className="row">
         {animes.map((anime, index) => (
-          <div key={index} className="col-md-3 bg-dark text-white" id="picha">
+          <div key={index} className="col-md-3" id="picha">
             <div className="card">
             {imageLoading && (
                       <div className="spinner-border" role="status">
@@ -56,7 +56,7 @@ function options(anime){
                       </div>
                     )}
               <img src={anime.poster} className={`card-img-top img-fluid ${imageLoading ? 'd-none' : ''}`} alt="Loading..." onLoad={handleImageLoad} onClick={()=> options(anime)} />
-              <div className="card-body pd-3 bg-dark text-white">
+              <div className={`card-body pd-3 ${toggle}`}>
                 <h5 className="card-title">{anime.title}</h5>
                 <p className="card-text">Rating : {anime.rating}</p>
                 <p className="card-text">Episodes : {anime.episodes}</p>

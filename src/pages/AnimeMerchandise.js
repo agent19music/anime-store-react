@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Footer from './layout/Footer';
+import Footer from '../layout/Footer';
+import '../App.css'
 
-function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
+function AnimeMerchandise({ anime, addToCart, removeFromCart, toggle }) {
   const [imageLoading, setImageLoading] = useState(true);
 
   const handleImageLoad = () => {
@@ -9,15 +10,17 @@ function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
   };
 
   return (
-    <div>
+    <div className='container mx-auto' id='merch'> 
       {anime ? (
         <div className="mt-5">
-          <h2 className="ml-3">{anime.title} {`Merchandise`}</h2>
+          <div id='add'>
+          <h2 className="ml-3">{anime.title} {`Merchandise`} <i class="fas fa-circle-plus"></i></h2>
+          </div>
           {anime.merchandise && anime.merchandise.length > 0 ? (
             <div className="row">
               {anime.merchandise.map((item) => (
                 <div key={item.id} className="col-md-3 mb-4">
-                  <div className="card bg-dark text-white d-flex flex-column h-100 overflow-hidden">
+                <div className={`card ${toggle} d-flex flex-column h-100 overflow-hidden`}>
                     {imageLoading && (
                       <div className="spinner-border" role="status">
                         <span className="visually-hidden">Loading...</span>
@@ -40,6 +43,7 @@ function AnimeMerchandise({ anime, addToCart, removeFromCart }) {
                     </div>
                   </div>
                 </div>
+                
               ))}
             </div>
           ) : (

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Animelist from './layout/Animelist.js'
 import Navbar from './layout/Navbar.js';
 import Topmerch from './pages/Topmerch.js';
-import Merchlist from './Merchlist.js';
+import Merchlist from './components/Merchlist.js';
 import {BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './pages/Cart.js';
 import Contact from './pages/Contact.js';
@@ -10,7 +10,9 @@ import Addanimeform from './pages/Addanimeform.js';
 import Swal from 'sweetalert2';
 import Feedback from './pages/Feedback.js';
 import './App.css';
-import Singleanime from './Singleanime.js';
+import Singleanime from './components/Singleanime.js';
+import Layout from './layout/layout.js';
+import Home from './pages/Home.js';
 
 
 function App() {
@@ -82,6 +84,8 @@ function addToCart(merchandise){
       });
   };
   
+
+  
   const addFeedback = (comm) => {
     fetch('http://localhost:8555/reviews', {
       method: 'POST',
@@ -102,21 +106,24 @@ function addToCart(merchandise){
   const toggleDarkMode = () => {
     setIsDarkmode(!isDarkmode);
   };
-  const toggle = isDarkmode ? ' bg-dark text-white' : 'bg-light text-black';
+  const toggle = isDarkmode ? ' bg-dark text-white' || 'dark': 'bg-light text-black'|| 'light';
 
   return (
     <div className={toggle}>
       <BrowserRouter>
         <Navbar mycart={mycart} toggleDarkMode={toggleDarkMode} />
         <Routes>
+          <Route path='/' element={<Layout/> } /> 
+          <Route index element={<Home />} />
           <Route path="/topmerch" element={<Topmerch />} />
-          <Route path="/animelist" element={<Animelist animes={animes} deleteAnime={deleteAnime} />} />
-          <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart} setMyCart={setMyCart} toggle={toggle}/>} />
+          <Route path="/animelist" element={<Animelist animes={animes} deleteAnime={deleteAnime} toggle={toggle}/>} />
+          <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart} setMyCart={setMyCart} toggle={toggle} />} />
           <Route path="/contact" element={<Contact addFeedback={addFeedback}/>} />
-          <Route path="/animemerch/:id" element={<Merchlist addToCart={addToCart} />} />
-          <Route path="/addanimeform" element={<Addanimeform addAnime={addAnime}/>} />
-          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/animemerch/:id" element={<Merchlist addToCart={addToCart} toggle={toggle} />} />
+          <Route path="/addanimeform" element={<Addanimeform addAnime={addAnime} toggle={toggle}/>} />
+          <Route path="/feedback" element={<Feedback toggle={toggle} />} />
           <Route path="/animelist/:title" element={<Singleanime  animes={animes}/>} />
+
 
 
 

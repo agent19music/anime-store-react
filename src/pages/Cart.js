@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../layout/Footer';
 import Swal from 'sweetalert2';
+import '../App.css'
 
-export default function Cart({ mycart, removeFromCart,setMyCart }) {
+export default function Cart({ mycart, removeFromCart,setMyCart, toggle }) {
 
   function handlePay(){
     Swal.fire({
@@ -19,10 +20,10 @@ export default function Cart({ mycart, removeFromCart,setMyCart }) {
   const totalPrice = mycart.reduce((total, item) => total + item.price, 0);
 
   return (
-    <div className='mt-5 bg-dark text-white'>
+    <div className={`mt-5 ${toggle} container mx-auto`} id='cart'>
       {mycart.length < 1 && (
         <p className='p-5 alert alert-warning'>
-          Oops! Cart is empty. Shop around to get your items here ;D
+         <i class="fas fa-circle-info"></i> Oops! Cart is empty. Shop around to get your items here ;D
         </p>
       )}
       {mycart.length > 0 && (
@@ -30,10 +31,10 @@ export default function Cart({ mycart, removeFromCart,setMyCart }) {
           
 
           {mycart.map((item) => (
-            <div key={item.image} className='col-md-3 bg-dark text-white' id='picha'>
-              <div className='card bg-dark text-white'>
+            <div key={item.image} className={`col-md-3 ${toggle}`} id='picha'>
+              <div className={`card `}>
                 <img src={item.image} className='card-img-top' alt='Loading...' />
-                <div className='card-body pd-3 bg-dark text-white'>
+                <div className={`card-body pd-3 ${toggle}`}>
                   <h5 className='card-title'>{item.product_name}</h5>
                   <p className='card-text'>{item.price}</p>
                   <div className='buttons'>
@@ -46,7 +47,7 @@ export default function Cart({ mycart, removeFromCart,setMyCart }) {
             </div>
             
           ))}
-          <table className='table table-striped table-dark'>
+          <table className={`table table-striped table-${toggle}`}>
             <thead>
               <tr>
                 <th scope="col">Product Name</th>

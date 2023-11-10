@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Footer from '../layout/Footer';
 import Swal from 'sweetalert2';
 
-export default function Addanimeform({addAnime}) {
+export default function Addanimeform({addAnime,toggle}) {
     const [rating, setRating] = useState('');
     const [title, setTitle] = useState('');
     const [episodes, setEpisodes] = useState('');
@@ -32,7 +32,7 @@ export default function Addanimeform({addAnime}) {
       <div className='container'>
         <div className='row justify-content-center'>
           <div className='col-6'>
-            <form onSubmit={handleSubmit} className="bg-dark text-white p-5 my-5">
+            <form onSubmit={handleSubmit} className={`${toggle} p-5 my-5`}>
               <div className="mb-3">
                 <label htmlFor="releasedate" className="form-label text-white">Release Date:</label>
                 <input

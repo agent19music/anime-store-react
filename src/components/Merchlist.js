@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import AnimeMerchandise from './AnimeMerchandise';
+import AnimeMerchandise from '../pages/AnimeMerchandise';
 import { useParams } from 'react-router-dom';
 
-export default function Merchlist({addToCart, removeFromCart}) {
+export default function Merchlist({addToCart, removeFromCart, toggle}) {
   const { id } = useParams();
   const [anime, setAnime] = useState(null);
 
@@ -16,7 +16,7 @@ export default function Merchlist({addToCart, removeFromCart}) {
   return (
     <div>
       {anime ? (
-        <AnimeMerchandise anime={anime} addToCart={addToCart} removeFromCart={removeFromCart}/>
+        <AnimeMerchandise anime={anime} addToCart={addToCart} removeFromCart={removeFromCart} toggle={toggle}/>
       ) : (
         <p>Loading anime merchandise data...</p>
       )}
