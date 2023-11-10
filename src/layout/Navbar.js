@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
-export default function Navbar({mycart, toggleDarkMode, toggle}) {
+export default function Navbar({mycart, toggleDarkMode, toggle, toggle2}) {
   
   return (
     <div>
-<nav className={`navbar navbar-expand-lg navbar-${toggle} ${toggle}`}>   <div className="container-fluid">
+ <nav className={`navbar navbar-expand-lg navbar-${toggle2} ${toggle}`}>
+  <div className="container-fluid">
        <button
       className="navbar-toggler"
       type="button"

@@ -4,7 +4,7 @@ import Footer from '../layout/Footer';
 import Swal from 'sweetalert2';
 import '../App.css'
 
-export default function Cart({ mycart, removeFromCart,setMyCart, toggle }) {
+export default function Cart({ mycart, removeFromCart,setMyCart, toggle2,toggle }) {
 
   function handlePay(){
     Swal.fire({
@@ -20,7 +20,7 @@ export default function Cart({ mycart, removeFromCart,setMyCart, toggle }) {
   const totalPrice = mycart.reduce((total, item) => total + item.price, 0);
 
   return (
-    <div className={`mt-5 ${toggle} container mx-auto`} id='cart'>
+    <div className={`mt-5 ${toggle2} container mx-auto`} id='cart'>
       {mycart.length < 1 && (
         <p className='p-5 alert alert-warning'>
          <i class="fas fa-circle-info"></i> Oops! Cart is empty. Shop around to get your items here ;D
@@ -47,7 +47,7 @@ export default function Cart({ mycart, removeFromCart,setMyCart, toggle }) {
             </div>
             
           ))}
-          <table className={`table table-striped table-${toggle}`}>
+          <table className={`table table-striped table-${toggle2}`}>
             <thead>
               <tr>
                 <th scope="col">Product Name</th>

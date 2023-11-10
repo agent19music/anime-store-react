@@ -106,18 +106,19 @@ function addToCart(merchandise){
   const toggleDarkMode = () => {
     setIsDarkmode(!isDarkmode);
   };
-  const toggle = isDarkmode ? ' bg-dark text-white' || 'dark': 'bg-light text-black'|| 'light';
+  const toggle = isDarkmode ? ' bg-dark text-white' : 'bg-light text-black'
+  const toggle2 = isDarkmode ? 'dark':'light';
 
   return (
     <div className={toggle}>
       <BrowserRouter>
-        <Navbar mycart={mycart} toggleDarkMode={toggleDarkMode} />
+        <Navbar mycart={mycart} toggleDarkMode={toggleDarkMode} toggle={toggle} toggle2={toggle2}/>
         <Routes>
           <Route path='/' element={<Layout/> } /> 
           <Route index element={<Home />} />
           <Route path="/topmerch" element={<Topmerch />} />
           <Route path="/animelist" element={<Animelist animes={animes} deleteAnime={deleteAnime} toggle={toggle}/>} />
-          <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart} setMyCart={setMyCart} toggle={toggle} />} />
+          <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart} setMyCart={setMyCart} toggle2={toggle2} toggle={toggle} />} />
           <Route path="/contact" element={<Contact addFeedback={addFeedback}/>} />
           <Route path="/animemerch/:id" element={<Merchlist addToCart={addToCart} toggle={toggle} />} />
           <Route path="/addanimeform" element={<Addanimeform addAnime={addAnime} toggle={toggle}/>} />
