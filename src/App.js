@@ -111,6 +111,11 @@ function addToCart(merchandise){
   const toggle2 = isDarkmode ? 'dark':'light';
   const toggle3 = isDarkmode ? 'white': 'black'
 
+  const searchAnime = (input) =>{
+    
+  }
+  
+
   return (
     <div className={toggle}>
       <BrowserRouter>

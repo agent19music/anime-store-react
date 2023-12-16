@@ -48,7 +48,7 @@ function options(anime){
     <div className='mt-5'>
          <div className="row">
         {animes.map((anime, index) => (
-          <div key={index} className="col-md-3" id="picha">
+          <div key={index} className="col-md-3 mt-3" id="picha">
             <div className="card">
             {imageLoading && (
                       <div className="spinner-border" role="status">
@@ -63,7 +63,6 @@ function options(anime){
                 <div className='buttons'>
                 <Link to={`/animemerch/${anime.id}`} className="btn btn-success" >Shop</Link>
                 </div>
-
               </div>
             </div>
           </div>

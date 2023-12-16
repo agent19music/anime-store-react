@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Footer from '../layout/Footer';
 import '../App.css'
 
-function AnimeMerchandise({ anime, addToCart, removeFromCart, toggle }) {
+function AnimeMerchandise({ anime, addToCart, toggle }) {
   const [imageLoading, setImageLoading] = useState(true);
 
   const handleImageLoad = () => {

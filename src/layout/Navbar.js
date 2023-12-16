@@ -43,6 +43,22 @@ export default function Navbar({mycart, toggleDarkMode, toggle, toggle2}) {
       
     </div>
     
+    <nav className="navbar navbar-light">
+  <div className="container-fluid">
+    <form className="d-flex input-group w-auto">
+      <input
+        type="search"
+        className="form-control border-0 rounded-0"  
+        placeholder="Search animes"
+        aria-label="Search"
+        aria-describedby="search-addon"
+      />
+      <span className="input-group-text border-0" id="search-addon">
+        <i className="fas fa-search"></i>
+      </span>
+    </form>
+  </div>
+</nav>
 
     
     <div className="d-flex align-items-center">
