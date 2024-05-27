@@ -1,8 +1,10 @@
-import React from 'react'
+import {React, useContext} from 'react'
 import Anime from '../components/Anime'
 import Footer from './Footer'
+import { SearchContext } from '../context/Searchcontext'
 
-export default function Animecollection({animes, deleteAnime, toggle, isLoading}) {
+export default function Animecollection({ deleteAnime, toggle}) {
+  const {isLoading,animes} = useContext(SearchContext)
   
   return (
     <div className='container'>

@@ -35,7 +35,7 @@ function App() {
             console.error("Error fetching data: ", error);
             setIsLoading(false); // Ensure loading is set to false even if there's an error
         });
-}, []);
+}, [animes]);
 
  
 function addToCart(merchandise){
@@ -129,15 +129,15 @@ function addToCart(merchandise){
       <BrowserRouter>
         <Navbar mycart={mycart} toggleDarkMode={toggleDarkMode} toggle={toggle} toggle2={toggle2}/>
         <Routes>
-          <Route path='/' element={<Layout setAnimes={setAnimes} animes={animes}/> } /> 
+          <Route path='/' element={<Layout /> } /> 
           <Route index element={<Home />} />
-          <Route path="/animelist" element={<Animelist animes={animes} deleteAnime={deleteAnime} toggle={toggle} isLoading={isLoading}/>} />
+          <Route path="/animelist" element={<Animelist  deleteAnime={deleteAnime} toggle={toggle} isLoading={isLoading}/>} />
           <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart} setMyCart={setMyCart} toggle2={toggle2} toggle={toggle} />} />
           <Route path="/contact" element={<Contact addFeedback={addFeedback} toggle={toggle} toggle3={toggle3}/>} />
           <Route path="/animemerch/:id" element={<Merchlist addToCart={addToCart} toggle={toggle} />} />
           <Route path="/addanimeform" element={<Addanimeform addAnime={addAnime} toggle={toggle} toggle3={toggle3}/>} />
           <Route path="/feedback" element={<Feedback toggle={toggle} />} />
-          <Route path="/animelist/:title" element={<Singleanime  animes={animes}/>} />
+          <Route path="/animelist/:title" element={<Singleanime  />} />
           <Route path="/termsofservice" element={<Termsofservice  toggle={toggle} toggle2={toggle2} toggle3={toggle3}  />} />
           <Route path="/donate" element={<DonatePage  toggle={toggle} toggle2={toggle2} toggle3={toggle3}  />} />
 
