@@ -4,7 +4,8 @@ import { Outlet } from 'react-router-dom'
 import Footer from './Footer'
 import '../App.css'
 
-export default function layout() {
+export default function layout({setAnimes,animes}) {
+  console.log(animes);
   return (
     <div className='bg-dark text-white'>
    <Navbar/>

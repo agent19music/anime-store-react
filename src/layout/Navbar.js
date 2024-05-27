@@ -1,7 +1,11 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { useContext } from 'react';
+import { SearchContext } from '../context/Searchcontext';
 
-export default function Navbar({mycart, toggleDarkMode, toggle, toggle2}) {
+export default function Navbar({mycart, toggleDarkMode, toggle, toggle2, setAnimes, animes}) {
+  const { setSearchTerm } = useContext(SearchContext);
+
   
   return (
     <div>
@@ -44,20 +48,22 @@ export default function Navbar({mycart, toggleDarkMode, toggle, toggle2}) {
     </div>
     
     <nav className="navbar navbar-light">
-  <div className="container-fluid">
-    <form className="d-flex input-group w-auto">
-      <input
-        type="search"
-        className="form-control border-0 rounded-0"  
-        placeholder="Search animes"
-        aria-label="Search"
-        aria-describedby="search-addon"
-      />
-      <span className="input-group-text border-0" id="search-addon">
-        <i className="fas fa-search"></i>
-      </span>
-    </form>
-  </div>
+    <div className="container-fluid">
+            <form className="d-flex input-group w-auto">
+                <input
+                    type="search"
+                    className="form-control border-0 rounded-0"  
+                    placeholder="Search animes"
+                    aria-label="Search"
+                    aria-describedby="search-addon"
+                    onChange={e => setSearchTerm(e.target.value)}
+                />
+                <span className="input-group-text border-0" id="search-addon">
+                    <i className="fas fa-search"></i>
+                </span>
+            </form>
+            {/* Render your animes here using the filteredAnimes array */}
+        </div>
 </nav>
 
     

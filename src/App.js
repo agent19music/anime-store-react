@@ -14,6 +14,7 @@ import Layout from './layout/layout.js';
 import Home from './pages/Home.js';
 import Termsofservice from './pages/Termsofservice.js';
 import DonatePage from './pages/Donate.js';
+import SearchProvider from './context/Searchcontext.js';
 
 
 function App() {
@@ -21,12 +22,21 @@ function App() {
   const [animes, setAnimes] = useState([])
   const [feedback, setFeedback] = useState([])
   const [isDarkmode, setIsDarkmode] = useState(true)
+  const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch('https://anime-store-db.onrender.com/animes')
-    .then((res)=> res.json())
-    .then((res)=> setAnimes(res))
-},[])
+        .then((res) => res.json())
+        .then((res) => {
+            setAnimes(res);
+            setIsLoading(false); // Set loading to false after data is fetched
+        })
+        .catch((error) => {
+            console.error("Error fetching data: ", error);
+            setIsLoading(false); // Ensure loading is set to false even if there's an error
+        });
+}, []);
+
  
 function addToCart(merchandise){
   if(!mycart.find((newguy)=> newguy.image===merchandise.image)){
@@ -111,19 +121,17 @@ function addToCart(merchandise){
   const toggle2 = isDarkmode ? 'dark':'light';
   const toggle3 = isDarkmode ? 'white': 'black'
 
-  const searchAnime = (input) =>{
-    
-  }
-  
+  console.log(animes);
 
   return (
     <div className={toggle}>
+      <SearchProvider>
       <BrowserRouter>
         <Navbar mycart={mycart} toggleDarkMode={toggleDarkMode} toggle={toggle} toggle2={toggle2}/>
         <Routes>
-          <Route path='/' element={<Layout/> } /> 
+          <Route path='/' element={<Layout setAnimes={setAnimes} animes={animes}/> } /> 
           <Route index element={<Home />} />
-          <Route path="/animelist" element={<Animelist animes={animes} deleteAnime={deleteAnime} toggle={toggle}/>} />
+          <Route path="/animelist" element={<Animelist animes={animes} deleteAnime={deleteAnime} toggle={toggle} isLoading={isLoading}/>} />
           <Route path="/cart" element={<Cart mycart={mycart} removeFromCart={removeFromCart} setMyCart={setMyCart} toggle2={toggle2} toggle={toggle} />} />
           <Route path="/contact" element={<Contact addFeedback={addFeedback} toggle={toggle} toggle3={toggle3}/>} />
           <Route path="/animemerch/:id" element={<Merchlist addToCart={addToCart} toggle={toggle} />} />
@@ -140,6 +148,7 @@ function addToCart(merchandise){
 
         </Routes>
       </BrowserRouter>
+      </SearchProvider>
      
     </div>
   );

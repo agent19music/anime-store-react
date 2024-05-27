@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2';
-export default function Anime({animes, deleteAnime, toggle}) {
+export default function Anime({animes, deleteAnime, toggle, isLoading}) {
   const [imageLoading, setImageLoading] = useState(true);
 
   const handleImageLoad = () => {
@@ -46,6 +46,7 @@ function options(anime){
 
   return (
     <div className='mt-5'>
+     
          <div className="row">
         {animes.map((anime, index) => (
           <div key={index} className="col-md-3 mt-3" id="picha">
