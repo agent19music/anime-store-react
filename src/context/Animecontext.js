@@ -8,7 +8,8 @@ export default function AnimeProvider({ children }) {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://anime-store-db.onrender.com/animes')
+        setIsLoading(true); // Ensure loading state is true before fetching
+        fetch('https://anime-store-db.onrender.com/animesss')
             .then((res) => res.json())
             .then((res) => {
                 setAnimes(res);
@@ -17,6 +18,8 @@ export default function AnimeProvider({ children }) {
             })
             .catch((error) => {
                 console.error("Error fetching data: ", error);
+                setAnimes([]);
+                setFilteredAnimes([]); // Set filteredAnimes to empty array on error
                 setIsLoading(false); // Ensure loading is set to false even if there's an error
             });
     }, []);

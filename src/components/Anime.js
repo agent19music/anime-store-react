@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { Box, Skeleton, SkeletonText } from '@chakra-ui/react';
+import { AnimeContext } from '../context/Animecontext';
 
-export default function Anime({ animes, deleteAnime, toggle }) {
+export default function Anime({ deleteAnime, toggle }) {
   const [imageLoading, setImageLoading] = useState(true);
+  const { isLoading, animes } = useContext(AnimeContext);
+  const navigate = useNavigate();
 
   const handleImageLoad = () => {
     setImageLoading(false);
   };
-
-  const navigate = useNavigate();
 
   function options(anime) {
     Swal.fire({
@@ -42,6 +44,24 @@ export default function Anime({ animes, deleteAnime, toggle }) {
         });
       }
     });
+  }
+
+  if (isLoading) {
+    return (
+      <div className='mt-5'>
+        <div className="row">
+          {Array(8).fill().map((_, index) => (
+            <div key={index} className="col-md-3 mt-3">
+              <Box padding="6" boxShadow="lg" bg="white">
+                <Skeleton height="200px" />
+                <SkeletonText mt="4" noOfLines={3} spacing="4" />
+                <Skeleton mt="4" height="40px" />
+              </Box>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
   }
 
   return (

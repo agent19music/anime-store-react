@@ -9,7 +9,7 @@ export default function Animelist({ deleteAnime, toggle }) {
 
   return (
     <div className='container'>
-      {isLoading ? (
+      {isLoading && (
         <SimpleGrid columns={[1, null, 3]} spacing="40px">
           {Array(8).fill().map((_, index) => (
             <Box key={index} padding="6" boxShadow="lg" bg="white">
@@ -19,9 +19,8 @@ export default function Animelist({ deleteAnime, toggle }) {
             </Box>
           ))}
         </SimpleGrid>
-      ) : (
-        <Anime animes={animes} deleteAnime={deleteAnime} toggle={toggle} />
       )}
+      {!isLoading && <Anime animes={animes} deleteAnime={deleteAnime} toggle={toggle} />}
       <Footer />
     </div>
   );
