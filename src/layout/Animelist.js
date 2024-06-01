@@ -14,7 +14,6 @@ export default function Animelist({ deleteAnime, toggle }) {
           {Array(8).fill().map((_, index) => (
             <Box key={index} padding="6" boxShadow="lg" bg="white">
               <Skeleton height="200px" />
-              <SkeletonText mt="4" noOfLines={3} spacing="4" />
               <Skeleton mt="4" height="40px" />
             </Box>
           ))}
