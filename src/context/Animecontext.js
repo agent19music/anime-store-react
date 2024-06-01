@@ -9,7 +9,7 @@ export default function AnimeProvider({ children }) {
 
     useEffect(() => {
         setIsLoading(true); // Ensure loading state is true before fetching
-        fetch('https://anime-store-db.onrender.com/animesss')
+        fetch('https://anime-store-db.onrender.com/animes')
             .then((res) => res.json())
             .then((res) => {
                 setAnimes(res);

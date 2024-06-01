@@ -13,7 +13,7 @@ export default function Anime({ deleteAnime, toggle }) {
     setImageLoading(false);
   };
 
-  function options(anime) {
+  const options = (anime) => {
     Swal.fire({
       title: "What changes are you making to this anime?",
       showDenyButton: true,
@@ -44,13 +44,13 @@ export default function Anime({ deleteAnime, toggle }) {
         });
       }
     });
-  }
+  };
 
-  if (isLoading) {
-    return (
-      <div className='mt-5'>
-        <div className="row">
-          {Array(8).fill().map((_, index) => (
+  return (
+    <div className='mt-5'>
+      <div className="row">
+        {isLoading && (
+          Array(8).fill().map((_, index) => (
             <div key={index} className="col-md-3 mt-3">
               <Box padding="6" boxShadow="lg" bg="white">
                 <Skeleton height="200px" />
@@ -58,16 +58,10 @@ export default function Anime({ deleteAnime, toggle }) {
                 <Skeleton mt="4" height="40px" />
               </Box>
             </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
+          ))
+        )}
 
-  return (
-    <div className='mt-5'>
-      <div className="row">
-        {animes.map((anime, index) => (
+        {!isLoading && animes.map((anime, index) => (
           <div key={index} className="col-md-3 mt-3" id="picha">
             <div className="card">
               {imageLoading && (
@@ -75,7 +69,13 @@ export default function Anime({ deleteAnime, toggle }) {
                   <span className="visually-hidden">Loading...</span>
                 </div>
               )}
-              <img src={anime.poster} className={`card-img-top img-fluid ${imageLoading ? 'd-none' : ''}`} alt="Loading..." onLoad={handleImageLoad} onClick={() => options(anime)} />
+              <img 
+                src={anime.poster} 
+                className={`card-img-top img-fluid ${imageLoading ? 'd-none' : ''}`} 
+                alt="Loading..." 
+                onLoad={handleImageLoad} 
+                onClick={() => options(anime)} 
+              />
               <div className={`card-body pd-3 ${toggle}`}>
                 <h5 className="card-title">{anime.title}</h5>
                 <p className="card-text">Rating : {anime.rating}</p>
