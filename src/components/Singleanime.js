@@ -1,10 +1,10 @@
 import {React, useContext} from 'react'
 import Updateanime from '../pages/Updateanime'
 import { useParams } from 'react-router-dom'
-import { SearchContext } from '../context/Searchcontext'
+import { AnimeContext } from '../context/Animecontext'
 
 export default function Singleanime() {
-    const {animes} = useContext(SearchContext) 
+    const {animes} = useContext(AnimeContext) 
     const {title} = useParams()
     const selectedAnime = animes.find((anime) => anime.title === title);
 

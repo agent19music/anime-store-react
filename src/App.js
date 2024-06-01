@@ -14,7 +14,7 @@ import Layout from './layout/layout.js';
 import Home from './pages/Home.js';
 import Termsofservice from './pages/Termsofservice.js';
 import DonatePage from './pages/Donate.js';
-import SearchProvider from './context/Searchcontext.js';
+import AnimeProvider from './context/Animecontext.js';
 
 
 function App() {
@@ -125,7 +125,7 @@ function addToCart(merchandise){
 
   return (
     <div className={toggle}>
-      <SearchProvider>
+      <AnimeProvider>
       <BrowserRouter>
         <Navbar mycart={mycart} toggleDarkMode={toggleDarkMode} toggle={toggle} toggle2={toggle2}/>
         <Routes>
@@ -148,7 +148,7 @@ function addToCart(merchandise){
 
         </Routes>
       </BrowserRouter>
-      </SearchProvider>
+      </AnimeProvider>
      
     </div>
   );

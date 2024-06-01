@@ -2,10 +2,10 @@ import { React, useContext } from 'react';
 import { Box, SimpleGrid, Skeleton, SkeletonText } from '@chakra-ui/react';
 import Anime from '../components/Anime';
 import Footer from './Footer';
-import { SearchContext } from '../context/Searchcontext';
+import { AnimeContext } from '../context/Animecontext';
 
 export default function Animelist({ deleteAnime, toggle }) {
-  const { isLoading, animes } = useContext(SearchContext);
+  const { isLoading, animes } = useContext(AnimeContext);
 
   return (
     <div className='container'>

@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect } from 'react';
-export const SearchContext = createContext();
+export const AnimeContext = createContext();
 
-export default function SearchProvider({ children }) {
+export default function AnimeProvider({ children }) {
     const [animes, setAnimes] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredAnimes, setFilteredAnimes] = useState([]);
@@ -40,8 +40,8 @@ export default function SearchProvider({ children }) {
     };
 
     return (
-        <SearchContext.Provider value={contextData}>
+        <AnimeContext.Provider value={contextData}>
             {children}
-        </SearchContext.Provider>
+        </AnimeContext.Provider>
     );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useContext } from 'react';
-import { SearchContext } from '../context/Searchcontext';
+import { AnimeContext } from '../context/Animecontext';
 
 export default function Navbar({ mycart, toggleDarkMode, toggle, toggle2 }) {
-  const { setSearchTerm } = useContext(SearchContext);
+  const { setSearchTerm } = useContext(AnimeContext);
 
   return (
     <div>
