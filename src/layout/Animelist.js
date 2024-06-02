@@ -11,9 +11,10 @@ export default function Animelist({ deleteAnime, toggle }) {
     <div className='container'>
       {isLoading && (
         <SimpleGrid columns={[1, null, 3]} spacing="40px">
-          {Array(8).fill().map((_, index) => (
+          {Array(12).fill().map((_, index) => (
             <Box key={index} padding="6" boxShadow="lg" bg="white">
               <Skeleton height="200px" />
+              <SkeletonText mt='4' noOfLines={4} spacing='4' skeletonHeight='2' />
               <Skeleton mt="4" height="40px" />
             </Box>
           ))}

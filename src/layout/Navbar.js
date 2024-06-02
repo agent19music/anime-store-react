@@ -25,7 +25,7 @@ export default function Navbar({ mycart, toggleDarkMode, toggle, toggle2 }) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <Link className="navbar-brand mt-2 mt-lg-0" to="#">
               <img
-                src="/logo.png"
+              
                 height="70"
                 alt="Logo"
               />

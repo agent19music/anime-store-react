@@ -15,6 +15,7 @@ import Home from './pages/Home.js';
 import Termsofservice from './pages/Termsofservice.js';
 import DonatePage from './pages/Donate.js';
 import AnimeProvider from './context/Animecontext.js';
+import { ChakraProvider } from '@chakra-ui/react';
 
 
 function App() {
@@ -125,6 +126,7 @@ function addToCart(merchandise){
 
   return (
     <div className={toggle}>
+      <ChakraProvider>
       <AnimeProvider>
       <BrowserRouter>
         <Navbar mycart={mycart} toggleDarkMode={toggleDarkMode} toggle={toggle} toggle2={toggle2}/>
@@ -149,6 +151,7 @@ function addToCart(merchandise){
         </Routes>
       </BrowserRouter>
       </AnimeProvider>
+      </ChakraProvider>
      
     </div>
   );
