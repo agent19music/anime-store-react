@@ -49,7 +49,7 @@ img.logo {
 	vertical-align: middle;
 }
 
-@media screen and (max-width: 601px){
+@media screen and (max-width: 900px){
     .input{
         max-width: 50vw;
     }
