@@ -33,3 +33,24 @@ cursor: pointer;
 #feedback{
     min-height: 100vh;
 }
+
+img.logo {
+	aspect-ratio: auto 2530 / 1063;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline;
+
+	max-height: 50px;
+
+	max-width: 165px;
+	overflow: clip;
+	padding: 10px 0px;
+	transform: matrix(1, 0, 0, 1, 0, 0);
+	vertical-align: middle;
+}
+
+@media screen and (max-width: 601px){
+    .input{
+        max-width: 50vw;
+    }
+}

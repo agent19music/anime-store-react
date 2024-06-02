@@ -25,8 +25,9 @@ export default function Navbar({ mycart, toggleDarkMode, toggle, toggle2 }) {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <Link className="navbar-brand mt-2 mt-lg-0" to="#">
               <img
-              
-                height="70"
+                className='logo'
+                src="/logo.png"
+                height="70px"
                 alt="Logo"
               />
             </Link>
@@ -46,7 +47,7 @@ export default function Navbar({ mycart, toggleDarkMode, toggle, toggle2 }) {
               <form className="d-flex input-group w-auto">
                 <input
                   type="search"
-                  className="form-control border-0 rounded-0"
+                  className="form-control border-0 rounded-0 input"
                   placeholder="Search animes"
                   aria-label="Search"
                   aria-describedby="search-addon"

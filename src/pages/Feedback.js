@@ -11,7 +11,7 @@ export default function Feedback({toggle}) {
   }, []);
 
   return (
-    <div className="container" id='feedback'>
+    <div className="container mt-5" id='feedback'>
       <div className="row mt-5">
         {feedback.map((feedback, index) => (
           <div key={index} className='col-md-3 mb-4'>
